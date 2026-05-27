@@ -1,0 +1,14 @@
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 24px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(209,164,110,.45), transparent);
+}
+.icon { flex-shrink: 0; }

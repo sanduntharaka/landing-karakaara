@@ -1,0 +1,59 @@
+.band {
+  background: linear-gradient(135deg, var(--wine) 0%, #6e1c27 100%);
+  padding: 0;
+}
+
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 24px;
+  gap: 4px;
+}
+
+.numRow {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.num {
+  font-family: var(--ff-head);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.suffix { font-family: var(--ff-head); font-size: 1.4rem; color: var(--gold); }
+
+.label {
+  font-size: .82rem;
+  font-weight: 500;
+  color: rgba(243,233,228,.65);
+  letter-spacing: .04em;
+  text-align: center;
+}
+
+.sep {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,.15);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .inner { flex-direction: column; gap: 0; }
+  .sep { width: 80px; height: 1px; }
+  .item { padding: 24px; }
+}
