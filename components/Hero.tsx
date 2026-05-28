@@ -107,14 +107,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className={s.scroll} aria-hidden>
-        <motion.div
-          className={s.scrollTrack}
-          animate={{ opacity: [0, 1, 0], scaleY: [0.4, 1, 0.4], y: [-10, 0, -10] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <span>Scroll</span>
-      </div>
     </section>
   );
 }
