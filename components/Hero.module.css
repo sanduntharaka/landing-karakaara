@@ -43,14 +43,36 @@
 .bl { bottom: 28px; left: 28px; border-width: 0 0 1.5px 1.5px; }
 .br { bottom: 28px; right: 28px; border-width: 0 1.5px 1.5px 0; }
 
-.content {
+.inner {
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  max-width: var(--max-w);
+  width: 100%;
+}
+
+.content {
+  flex: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
+  min-width: 0;
+}
+
+.imageWrap {
+  flex: 0 0 480px;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-lg);
+  object-fit: cover;
 }
 
 .lotus { margin-bottom: 10px; }
@@ -164,6 +186,11 @@
   transform-origin: top;
 }
 
+@media (max-width: 960px) {
+  .inner { flex-direction: column; gap: 48px; }
+  .imageWrap { flex: none; width: 100%; max-width: 560px; }
+}
+
 @media (max-width: 640px) {
   .hero { padding: calc(var(--nav-h) + 40px) 20px 64px; }
   .corner { width: 24px; height: 24px; }
@@ -172,6 +199,7 @@
   .bl { bottom: 16px; left: 16px; }
   .br { bottom: 16px; right: 16px; }
   .mainImg { max-width: 260px; }
+  .imageWrap { max-width: 100%; }
   .breakLg { display: none; }
   .actions { flex-direction: column; width: 100%; }
   .btnPrimary, .btnOutline { width: 100%; justify-content: center; }

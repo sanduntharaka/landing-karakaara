@@ -18,6 +18,8 @@ export function isIOS(): boolean {
 export function handleLogin(): void {
   if (isAndroid()) {
     window.location.href = APP_URLS.playStore;
+  } else if (isIOS()) {
+    window.location.href = APP_URLS.appStore;
   } else {
     window.location.href = APP_URLS.web;
   }
