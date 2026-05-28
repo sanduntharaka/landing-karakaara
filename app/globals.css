@@ -1,41 +1,42 @@
-/* ═══════════════════════════════════════════════════════════════
-   Karakaara — globals.css
-   Color system: Ivory #F3E9E4 · Gold #D1A46E · Wine #8B2635
-   Fonts injected via next/font in layout.tsx
-═══════════════════════════════════════════════════════════════ */
+/* Karakaara global theme. Fonts are injected via next/font in layout.tsx. */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --ivory:      #F3E9E4;
-  --ivory-2:    #EDD5C0;
+  --ivory-2:    #E7D8CF;
   --gold:       #D1A46E;
   --gold-dk:    #B8843E;
   --gold-lt:    rgba(209, 164, 110, 0.15);
   --gold-xlt:   rgba(209, 164, 110, 0.08);
   --wine:       #8B2635;
+  --wine-2:     #A63447;
   --wine-lt:    rgba(139, 38, 53, 0.10);
   --wine-xlt:   rgba(139, 38, 53, 0.06);
-  --dark:       #2D1B0E;
-  --text:       #3D2B1E;
-  --muted:      #7A6550;
-  --card:       #FFFAF6;
+  --dark:       #1A1410;
+  --dark-2:     #221C17;
+  --dark-3:     #2A241F;
+  --text:       #1A1A1A;
+  --muted:      #6B6B6B;
+  --soft:       #E5DCD4;
+  --card:       #FFFFFF;
+  --card-warm:  #FFFAF6;
   --white:      #FFFFFF;
 
   --ff-head:    var(--font-playfair), Georgia, serif;
   --ff-body:    var(--font-inter), system-ui, -apple-system, sans-serif;
 
   --r-sm:       8px;
-  --r-md:       16px;
-  --r-lg:       24px;
-  --r-xl:       32px;
+  --r-md:       12px;
+  --r-lg:       16px;
+  --r-xl:       24px;
 
-  --sh-sm:  0 2px 8px rgba(45,27,14,.07);
-  --sh-md:  0 6px 24px rgba(45,27,14,.10);
-  --sh-lg:  0 12px 48px rgba(45,27,14,.14);
+  --sh-sm:  0 2px 8px rgba(26, 20, 16, .07);
+  --sh-md:  0 10px 30px rgba(26, 20, 16, .10);
+  --sh-lg:  0 24px 70px rgba(26, 20, 16, .18);
 
   --max-w:  1160px;
-  --nav-h:  68px;
+  --nav-h:  72px;
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -43,7 +44,7 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: var(--ff-body);
   color: var(--text);
-  background: var(--ivory);
+  background: #f8f2ee;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -59,21 +60,25 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   padding: 0 24px;
 }
 
-.section { padding: 100px 0; }
+.section { padding: 96px 0; }
 
-.section-hdr { text-align: center; margin-bottom: 64px; }
+.section-hdr {
+  text-align: center;
+  margin: 0 auto 56px;
+  max-width: 720px;
+}
 
 .badge {
   display: inline-block;
   font-family: var(--ff-body);
-  font-size: .75rem;
-  font-weight: 600;
+  font-size: .74rem;
+  font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--wine);
-  background: var(--wine-lt);
-  border: 1px solid rgba(139,38,53,.18);
-  padding: 5px 14px;
+  background: rgba(139, 38, 53, .08);
+  border: 1px solid rgba(139, 38, 53, .16);
+  padding: 6px 14px;
   border-radius: 100px;
   margin-bottom: 16px;
 }
@@ -81,35 +86,37 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .badge-light {
   display: inline-block;
   font-family: var(--ff-body);
-  font-size: .75rem;
-  font-weight: 600;
+  font-size: .74rem;
+  font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(243,233,228,.9);
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.2);
-  padding: 5px 14px;
+  color: rgba(245, 240, 235, .9);
+  background: rgba(255, 255, 255, .10);
+  border: 1px solid rgba(255, 255, 255, .16);
+  padding: 6px 14px;
   border-radius: 100px;
   margin-bottom: 16px;
 }
 
 .section-title {
   font-family: var(--ff-head);
-  font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
-  color: var(--wine);
-  line-height: 1.2;
+  color: var(--text);
+  line-height: 1.16;
   margin-bottom: 16px;
 }
 
 .section-sub {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--muted);
-  max-width: 560px;
+  max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
 }
 
 @media (max-width: 640px) {
+  .container { padding: 0 20px; }
   .section { padding: 72px 0; }
+  .section-hdr { margin-bottom: 40px; }
 }

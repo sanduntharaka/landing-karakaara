@@ -15,94 +15,71 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section className={s.hero} id="home" aria-label="Welcome to Karakaara">
-      <div className={s.pattern} aria-hidden />
-      <div className={`${s.glow} ${s.glowL}`} aria-hidden />
-      <div className={`${s.glow} ${s.glowR}`} aria-hidden />
-      <span className={`${s.corner} ${s.tl}`} aria-hidden />
-      <span className={`${s.corner} ${s.tr}`} aria-hidden />
-      <span className={`${s.corner} ${s.bl}`} aria-hidden />
-      <span className={`${s.corner} ${s.br}`} aria-hidden />
+      <div className={s.texture} aria-hidden />
 
       <div className={s.inner}>
         <div className={s.content}>
-          <motion.div
-            className={s.lotus}
-            aria-hidden
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-              <ellipse cx="26" cy="20" rx="5.5" ry="14" fill="#8B2635" opacity="0.65"/>
-              <ellipse cx="26" cy="20" rx="5.5" ry="14" fill="#D1A46E" opacity="0.5" transform="rotate(-42 26 26)"/>
-              <ellipse cx="26" cy="20" rx="5.5" ry="14" fill="#D1A46E" opacity="0.5" transform="rotate(42 26 26)"/>
-              <ellipse cx="26" cy="20" rx="5.5" ry="14" fill="#D1A46E" opacity="0.35" transform="rotate(-78 26 26)"/>
-              <ellipse cx="26" cy="20" rx="5.5" ry="14" fill="#D1A46E" opacity="0.35" transform="rotate(78 26 26)"/>
-              <circle cx="26" cy="26" r="6.5" fill="#8B2635" opacity="0.8"/>
-              <circle cx="26" cy="26" r="3" fill="#F3E9E4" opacity="0.9"/>
-              <path d="M26 32.5 L26 46" stroke="#D1A46E" strokeWidth="1.5" opacity="0.45"/>
-              <path d="M21 42 Q26 38.5 31 42" stroke="#D1A46E" strokeWidth="1" opacity="0.4" fill="none"/>
-            </svg>
+          <motion.div className={s.eyebrow} variants={fadeUp} custom={0.1} initial="hidden" animate="show">
+            Private Sri Lankan Matrimony Platform
           </motion.div>
 
-          <motion.div className={s.eyebrow} role="text" variants={fadeUp} custom={0.1} initial="hidden" animate="show">
-            ✦ &nbsp; Sri Lankan Matrimony Platform &nbsp; ✦
+          <motion.div className={s.brand} variants={fadeUp} custom={0.18} initial="hidden" animate="show">
+            <Image src="/assets/images/main.png" alt="Karakaara" className={s.mainImg} width={420} height={210} priority />
           </motion.div>
 
-          <motion.div className={s.brand} variants={fadeUp} custom={0.2} initial="hidden" animate="show">
-            <Image src="/assets/images/main.png" alt="Karakaara" className={s.mainImg} width={400} height={200} priority />
-          </motion.div>
+          <motion.h1 className={s.title} variants={fadeUp} custom={0.28} initial="hidden" animate="show">
+            Serious marriage proposals, managed with modern trust.
+          </motion.h1>
 
-          <motion.p className={s.tagline} variants={fadeUp} custom={0.3} initial="hidden" animate="show">
-            <em>Where Hearts Meet Tradition</em>
+          <motion.p className={s.sub} variants={fadeUp} custom={0.38} initial="hidden" animate="show">
+            Karakaara helps families and individuals discover compatible Sri Lankan matches through a secure,
+            respectful platform built for tradition, privacy, and confident decisions.
           </motion.p>
 
-          <motion.p className={s.sub} variants={fadeUp} custom={0.4} initial="hidden" animate="show">
-            Sri Lanka&apos;s premier matrimony platform — connecting hearts through{' '}
-            <br className={s.breakLg} />
-            culture, tradition, and the timeless pursuit of meaningful partnership.
-          </motion.p>
-
-          <motion.div className={s.actions} variants={fadeUp} custom={0.5} initial="hidden" animate="show">
+          <motion.div className={s.actions} variants={fadeUp} custom={0.48} initial="hidden" animate="show">
             <button className={s.btnPrimary} onClick={handleLogin}>
-              Begin Your Journey
+              Open Web App
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <a href="#features" className={s.btnOutline}>Explore More</a>
+            <a href="#features" className={s.btnOutline}>View Platform</a>
           </motion.div>
 
-          <motion.div className={s.langs} aria-label="Available in Sinhala and English" variants={fadeUp} custom={0.6} initial="hidden" animate="show">
-            <span lang="si">සිංහල</span>
-            <span className={s.langSep} aria-hidden>·</span>
-            <span>English</span>
+          <motion.div className={s.trust} variants={fadeUp} custom={0.58} initial="hidden" animate="show" aria-label="Platform highlights">
+            <span>Verified profiles</span>
+            <span>Family-ready proposals</span>
+            <span>Privacy controls</span>
           </motion.div>
         </div>
 
         <motion.div
-          className={s.imageWrap}
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: EASE, delay: 0.35 }}
+          className={s.visual}
+          initial={{ opacity: 0, y: 34 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: EASE, delay: 0.32 }}
         >
-          <Image
-            src="/assets/images/hero_image.png"
-            alt="Sri Lankan couple with family"
-            className={s.heroImg}
-            width={600}
-            height={338}
-            priority
-          />
-        </motion.div>
-      </div>
+          <div className={s.imagePanel}>
+            <Image
+              src="/assets/images/hero_image.png"
+              alt="Sri Lankan couple and family using Karakaara"
+              className={s.heroImg}
+              width={640}
+              height={360}
+              priority
+            />
+          </div>
 
-      <div className={s.scroll} aria-hidden>
-        <motion.div
-          className={s.scrollTrack}
-          animate={{ opacity: [0, 1, 0], scaleY: [0.4, 1, 0.4], y: [-10, 0, -10] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <span>Scroll</span>
+          <div className={s.insightCard}>
+            <span className={s.cardLabel}>Proposal Quality</span>
+            <strong>Profiles built around values, family background, and compatibility.</strong>
+          </div>
+
+          <div className={s.metricCard}>
+            <strong>10k+</strong>
+            <span>registered members</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

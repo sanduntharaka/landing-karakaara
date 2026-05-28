@@ -5,6 +5,11 @@ export const APP_URLS = {
   appStore: "https://apps.apple.com/app/karakaara/id0000000000",
 } as const;
 
+export const APP_SETTINGS = {
+  android: true,
+  appleStore: true,
+} as const;
+
 export function isAndroid(): boolean {
   if (typeof navigator === "undefined") return false;
   return /android/i.test(navigator.userAgent);
@@ -17,12 +22,20 @@ export function isIOS(): boolean {
 
 export function handleLogin(): void {
   if (isAndroid()) {
-    window.location.href = APP_URLS.playStore;
+    handleAndroidStore();
   } else if (isIOS()) {
-    window.location.href = APP_URLS.appStore;
+    handleAppleStore();
   } else {
     window.location.href = APP_URLS.web;
   }
+}
+
+export function handleAndroidStore(): void {
+  window.location.href = APP_SETTINGS.android ? APP_URLS.playStore : APP_URLS.web;
+}
+
+export function handleAppleStore(): void {
+  window.location.href = APP_SETTINGS.appleStore ? APP_URLS.appStore : APP_URLS.web;
 }
 
 export function showToast(message: string): void {

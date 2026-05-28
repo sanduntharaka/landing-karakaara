@@ -23,9 +23,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Karakaara — Where Hearts Meet Tradition | Sri Lankan Matrimony',
+  title: 'Karakaara - Sri Lankan Matrimony Platform',
   description:
-    "Karakaara is Sri Lanka's premier matrimony platform. Browse traditional marriage proposals, find compatible matches, and begin your journey together.",
+    'Karakaara is a modern Sri Lankan matrimony platform for structured, private, and family-ready marriage proposals.',
   keywords: [
     'Sri Lankan matrimony',
     'marriage proposals',
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
     'sinhala marriage',
     'diaspora',
   ],
-  authors: [{ name: 'Karakaara — Lankovate' }],
+  authors: [{ name: 'Karakaara - Lankovate' }],
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://karakaara.lk/' },
   openGraph: {
     type: 'website',
     url: 'https://karakaara.lk/',
     siteName: 'Karakaara',
-    title: 'Karakaara — Where Hearts Meet Tradition',
+    title: 'Karakaara - Sri Lankan Matrimony Platform',
     description:
-      "Sri Lanka's premier matrimony platform connecting hearts through tradition and culture.",
+      'Structured, private, and family-ready marriage proposals for Sri Lankans.',
     images: [
       {
         url: 'https://karakaara.lk/og-image.jpg',
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Karakaara — Where Hearts Meet Tradition',
+    title: 'Karakaara - Sri Lankan Matrimony Platform',
     description:
-      "Sri Lanka's premier matrimony platform connecting hearts through tradition and culture.",
+      'Structured, private, and family-ready marriage proposals for Sri Lankans.',
     images: ['https://karakaara.lk/og-image.jpg'],
   },
 };
@@ -72,14 +72,13 @@ const jsonLd = {
       '@type': 'Organization',
       '@id': 'https://karakaara.lk/#organization',
       name: 'Karakaara',
-      alternateName: 'කරකාරා',
       url: 'https://karakaara.lk',
       logo: {
         '@type': 'ImageObject',
         url: 'https://karakaara.lk/assets/images/only_logo.png',
       },
       description:
-        'Sri Lankan matrimony platform connecting hearts through tradition',
+        'Sri Lankan matrimony platform for structured, private marriage proposals',
       foundingLocation: { '@type': 'Country', name: 'Sri Lanka' },
     },
     {
@@ -93,7 +92,6 @@ const jsonLd = {
     {
       '@type': 'MobileApplication',
       name: 'Karakaara',
-      alternateName: 'කරකාරා',
       operatingSystem: 'Android',
       applicationCategory: 'LifestyleApplication',
       url: 'https://play.google.com/store/apps/details?id=com.lankovate.karakaara',

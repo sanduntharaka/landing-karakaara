@@ -1,6 +1,8 @@
 .band {
-  background: linear-gradient(135deg, var(--wine) 0%, #6e1c27 100%);
+  background: var(--dark);
   padding: 0;
+  border-top: 1px solid rgba(209, 164, 110, .18);
+  border-bottom: 1px solid rgba(209, 164, 110, .18);
 }
 
 .inner {
@@ -8,18 +10,17 @@
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 0;
 }
 
 .item {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 36px 24px;
-  gap: 4px;
+  align-items: flex-start;
+  padding: 30px 28px;
+  gap: 7px;
 }
 
 .numRow {
@@ -30,7 +31,7 @@
 
 .num {
   font-family: var(--ff-head);
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
   font-weight: 700;
   color: var(--gold);
   line-height: 1;
@@ -39,21 +40,21 @@
 
 .label {
   font-size: .82rem;
-  font-weight: 500;
-  color: rgba(243,233,228,.65);
+  font-weight: 700;
+  color: rgba(245, 240, 235, .68);
   letter-spacing: .04em;
-  text-align: center;
+  text-align: left;
 }
 
 .sep {
   width: 1px;
-  height: 48px;
-  background: rgba(255,255,255,.15);
+  background: rgba(255, 255, 255, .10);
   flex-shrink: 0;
 }
 
 @media (max-width: 640px) {
-  .inner { flex-direction: column; gap: 0; }
-  .sep { width: 80px; height: 1px; }
-  .item { padding: 24px; }
+  .inner { flex-direction: column; gap: 0; padding: 0 20px; }
+  .sep { width: 100%; height: 1px; }
+  .item { padding: 24px 0; align-items: center; }
+  .label { text-align: center; }
 }

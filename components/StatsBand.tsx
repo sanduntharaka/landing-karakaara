@@ -11,8 +11,8 @@ interface StatItem {
 
 const STATS: StatItem[] = [
   { target: 10000, label: 'Registered Members' },
-  { target: 5000,  label: 'Active Proposals' },
-  { target: 2000,  label: 'Happy Matches' },
+  { target: 5000, label: 'Active Proposals' },
+  { target: 2000, label: 'Successful Connections' },
 ];
 
 function Counter({ target }: { target: number }) {

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { handleLogin } from '@/lib/config';
 import s from './Nav.module.css';
@@ -32,20 +33,24 @@ export default function Nav() {
       className={s.nav}
       animate={scrolled ? 'scrolled' : 'top'}
       variants={{
-        top:     { backgroundColor: 'rgba(243,233,228,0)', boxShadow: 'none', backdropFilter: 'blur(0px)' },
-        scrolled:{ backgroundColor: 'rgba(243,233,228,0.88)', boxShadow: '0 1px 0 rgba(209,164,110,.3), 0 2px 8px rgba(45,27,14,.07)', backdropFilter: 'blur(16px)' },
+        top: { backgroundColor: 'rgba(26,20,16,0)', boxShadow: 'none', backdropFilter: 'blur(0px)' },
+        scrolled: {
+          backgroundColor: 'rgba(26,20,16,0.86)',
+          boxShadow: '0 1px 0 rgba(209,164,110,.18), 0 12px 30px rgba(0,0,0,.18)',
+          backdropFilter: 'blur(18px)',
+        },
       }}
       transition={{ duration: 0.3 }}
       role="navigation"
       aria-label="Main navigation"
     >
       <div className={s.container}>
-        <a href="/" className={s.logo} aria-label="Karakaara home">
+        <Link href="/" className={s.logo} aria-label="Karakaara home">
           <Image src="/assets/images/horizontal.png" alt="Karakaara" className={s.logoImg} width={160} height={40} priority />
-        </a>
+        </Link>
 
         <ul className={s.links} role="list">
-          {[['features','Features'],['how-it-works','How It Works'],['about','About']].map(([id, label]) => (
+          {[['features','Platform'],['how-it-works','Process'],['about','Trust']].map(([id, label]) => (
             <li key={id}>
               <a href={`#${id}`} className={s.link} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
                 {label}
@@ -78,7 +83,7 @@ export default function Nav() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
           >
-            {[['features','Features'],['how-it-works','How It Works'],['about','About']].map(([id, label]) => (
+            {[['features','Platform'],['how-it-works','Process'],['about','Trust']].map(([id, label]) => (
               <a key={id} href={`#${id}`} className={s.mobileLink} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
                 {label}
               </a>

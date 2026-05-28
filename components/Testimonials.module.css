@@ -1,42 +1,35 @@
 .testimonials {
-  background: linear-gradient(180deg, var(--white) 0%, var(--ivory) 100%);
+  background: var(--white);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 18px;
 }
 
 .card {
-  background: var(--card);
-  border: 1px solid rgba(209,164,110,.22);
+  background: #f8f2ee;
+  border: 1px solid rgba(26, 20, 16, .08);
   border-radius: var(--r-lg);
-  padding: 32px 28px;
-  position: relative;
-  transition: box-shadow .25s, transform .25s;
+  padding: 30px 28px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow .25s, transform .25s, border-color .25s;
 }
-.card:hover { box-shadow: var(--sh-md); transform: translateY(-4px); }
-
-.quoteMark {
-  font-family: var(--ff-head);
-  font-size: 5rem;
-  line-height: 1;
-  color: var(--gold);
-  opacity: .35;
-  position: absolute;
-  top: 12px; left: 20px;
-  pointer-events: none;
-  user-select: none;
+.card:hover {
+  border-color: rgba(209, 164, 110, .42);
+  box-shadow: var(--sh-md);
+  transform: translateY(-3px);
 }
 
 .text {
-  font-size: .95rem;
+  font-size: .98rem;
   color: var(--text);
-  line-height: 1.8;
-  margin-top: 32px;
-  margin-bottom: 24px;
-  font-style: italic;
+  line-height: 1.75;
+  margin-bottom: 26px;
 }
 
 .author {
@@ -48,10 +41,10 @@
 .avatar {
   width: 42px; height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--wine) 0%, var(--gold-dk) 100%);
+  background: var(--wine);
   color: var(--white);
   font-size: .8rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: .04em;
   display: flex;
   align-items: center;
@@ -59,12 +52,10 @@
   flex-shrink: 0;
 }
 
-.name { font-weight: 600; font-size: .93rem; color: var(--dark); }
+.name { font-weight: 700; font-size: .94rem; color: var(--text); }
 .location { font-size: .8rem; color: var(--muted); margin-top: 2px; }
 
 @media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; }
+  .card { min-height: auto; }
 }
