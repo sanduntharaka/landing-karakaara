@@ -76,15 +76,21 @@ export default function Hero() {
           <div className={s.col2}>
             <motion.div className={s.eyebrow} role="text" variants={fadeUp} custom={0.1} initial="hidden" animate="show">
               ✦ &nbsp; Sri Lankan Matrimony Platform &nbsp; ✦
+              <span className={s.eyebrowSi} lang="si">ශ්‍රී ලාංකික විවාහ වේදිකාව</span>
             </motion.div>
 
             <motion.p className={s.tagline} variants={fadeUp} custom={0.3} initial="hidden" animate="show">
               <em>Where Hearts Meet Tradition</em>
+              <span className={s.taglineSi} lang="si">හදවත් සම්ප්‍රදාය හමු වන තැන</span>
             </motion.p>
 
             <motion.p className={s.sub} variants={fadeUp} custom={0.4} initial="hidden" animate="show">
               Sri Lanka&apos;s premier matrimony platform — connecting hearts through
               culture, tradition, and the timeless pursuit of meaningful partnership.
+              <span className={s.subSi} lang="si">
+                ශ්‍රී ලංකාවේ ප්‍රමුඛ විවාහ වේදිකාව — සංස්කෘතිය, සම්ප්‍රදාය හා
+                අර්ථාන්විත ජීවිත සහකාරිත්වය සොයන හදවත් සම්බන්ධ කරයි.
+              </span>
             </motion.p>
 
             <motion.div className={s.actions} variants={fadeUp} custom={0.5} initial="hidden" animate="show">
