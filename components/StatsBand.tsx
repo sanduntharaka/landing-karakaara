@@ -1,4 +1,4 @@
-import s from './StatsBand.module.css';
+import s from "./StatsBand.module.css";
 
 export default function StatsBand() {
   return (
@@ -6,7 +6,7 @@ export default function StatsBand() {
       <div className={s.inner}>
         <div className={s.item}>
           <span className={s.num}>Coming Soon</span>
-          <span className={s.label}>Platform statistics will be available soon</span>
+          <span className={s.label}>Platform will be available soon</span>
         </div>
       </div>
     </section>
