@@ -1,8 +1,23 @@
+import s from './StatsBand.module.css';
+
+export default function StatsBand() {
+  return (
+    <section className={s.band} aria-label="Platform statistics">
+      <div className={s.inner}>
+        <div className={s.item}>
+          <span className={s.num}>Coming Soon</span>
+          <span className={s.label}>Platform statistics will be available soon</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/*
 'use client';
 
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
-import s from './StatsBand.module.css';
 
 interface StatItem {
   target: number;
@@ -56,3 +71,4 @@ export default function StatsBand() {
     </section>
   );
 }
+*/

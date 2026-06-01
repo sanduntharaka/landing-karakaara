@@ -1,8 +1,7 @@
 export const APP_URLS = {
-  web: "https://find.karakaara.lk/",
-  playStore:
-    "https://play.google.com/store/apps/details?id=com.lankovate.karakaara",
-  appStore: "https://apps.apple.com/app/karakaara/id0000000000",
+  web: "#",
+  playStore: "#",
+  appStore: "#",
 } as const;
 
 export const APP_STORE_SETTINGS = {

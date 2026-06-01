@@ -1,104 +1,104 @@
-import type { Metadata, Viewport } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
-import './globals.css';
+import type { Metadata, Viewport } from "next";
+import { Playfair_Display, Inter } from "next/font/google";
+import "./globals.css";
 
 const playfair = Playfair_Display({
-  variable: '--font-playfair',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  display: 'swap',
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: 'Karakaara — Where Hearts Meet Tradition | Sri Lankan Matrimony',
+  title: "Karakaara - Where Hearts Meet Tradition | Sri Lankan Matrimony",
   description:
     "Karakaara is Sri Lanka's premier matrimony platform. Browse traditional marriage proposals, find compatible matches, and begin your journey together.",
   keywords: [
-    'Sri Lankan matrimony',
-    'marriage proposals',
-    'Sinhala wedding',
-    'Lanka marriage app',
-    'traditional matchmaking',
-    'karakaara',
-    'poruwa ceremony',
-    'sinhala marriage',
-    'diaspora',
+    "Sri Lankan matrimony",
+    "marriage proposals",
+    "Sinhala wedding",
+    "Lanka marriage app",
+    "traditional matchmaking",
+    "karakaara",
+    "poruwa ceremony",
+    "sinhala marriage",
+    "diaspora",
   ],
-  authors: [{ name: 'Karakaara — Lankovate' }],
+  authors: [{ name: "Karakaara - Lankovate" }],
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://karakaara.lk/' },
+  alternates: { canonical: "https://karakaara.lk/" },
   openGraph: {
-    type: 'website',
-    url: 'https://karakaara.lk/',
-    siteName: 'Karakaara',
-    title: 'Karakaara — Where Hearts Meet Tradition',
+    type: "website",
+    url: "https://karakaara.lk/",
+    siteName: "Karakaara",
+    title: "Karakaara - Where Hearts Meet Tradition",
     description:
       "Sri Lanka's premier matrimony platform connecting hearts through tradition and culture.",
     images: [
       {
-        url: 'https://karakaara.lk/og-image.jpg',
+        url: "https://karakaara.lk/og-image.jpg",
         width: 1200,
         height: 630,
       },
     ],
-    locale: 'en_US',
+    locale: "en_US",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Karakaara — Where Hearts Meet Tradition',
+    card: "summary_large_image",
+    title: "Karakaara - Where Hearts Meet Tradition",
     description:
       "Sri Lanka's premier matrimony platform connecting hearts through tradition and culture.",
-    images: ['https://karakaara.lk/og-image.jpg'],
+    images: ["https://karakaara.lk/og-image.jpg"],
   },
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'Organization',
-      '@id': 'https://karakaara.lk/#organization',
-      name: 'Karakaara',
-      alternateName: 'කරකාරා',
-      url: 'https://karakaara.lk',
+      "@type": "Organization",
+      "@id": "https://karakaara.lk/#organization",
+      name: "Karakaara",
+      alternateName: "කරකාර",
+      url: "https://karakaara.lk",
       logo: {
-        '@type': 'ImageObject',
-        url: 'https://karakaara.lk/assets/images/only_logo.png',
+        "@type": "ImageObject",
+        url: "https://karakaara.lk/assets/images/only_logo.png",
       },
       description:
-        'Sri Lankan matrimony platform connecting hearts through tradition',
-      foundingLocation: { '@type': 'Country', name: 'Sri Lanka' },
+        "Sri Lankan matrimony platform connecting hearts through tradition",
+      foundingLocation: { "@type": "Country", name: "Sri Lanka" },
     },
     {
-      '@type': 'WebSite',
-      '@id': 'https://karakaara.lk/#website',
-      url: 'https://karakaara.lk',
-      name: 'Karakaara',
-      inLanguage: ['en', 'si'],
-      publisher: { '@id': 'https://karakaara.lk/#organization' },
+      "@type": "WebSite",
+      "@id": "https://karakaara.lk/#website",
+      url: "https://karakaara.lk",
+      name: "Karakaara",
+      inLanguage: ["en", "si"],
+      publisher: { "@id": "https://karakaara.lk/#organization" },
     },
     {
-      '@type': 'MobileApplication',
-      name: 'Karakaara',
-      alternateName: 'කරකාරා',
-      operatingSystem: 'Android',
-      applicationCategory: 'LifestyleApplication',
-      url: 'https://play.google.com/store/apps/details?id=com.lankovate.karakaara',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'LKR' },
-      publisher: { '@id': 'https://karakaara.lk/#organization' },
+      "@type": "MobileApplication",
+      name: "Karakaara",
+      alternateName: "කරකාර",
+      operatingSystem: "Android",
+      applicationCategory: "LifestyleApplication",
+      url: "https://play.google.com/store/apps/details?id=com.lankovate.karakaara",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "LKR" },
+      publisher: { "@id": "https://karakaara.lk/#organization" },
     },
   ],
 };

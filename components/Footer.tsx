@@ -17,7 +17,7 @@ export default function Footer() {
             </a>
             <p className={s.tagline}>Where Hearts Meet Tradition</p>
             <p className={s.desc}>
-              Sri Lanka&apos;s premier matrimony platform — connecting hearts
+              Sri Lanka&apos;s premier matrimony platform - connecting hearts
               through tradition, culture, and the timeless pursuit of
               partnership.
             </p>
@@ -41,7 +41,7 @@ export default function Footer() {
               <a href="#about" className={s.link}>
                 About
               </a>
-              <a href="mailto:hello@karakaara.lk" className={s.link}>
+              <a href="mailto:contact@karakaara.lk" className={s.link}>
                 Contact
               </a>
             </div>
