@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { handleLogin } from '@/lib/config';
 import s from './Nav.module.css';
 
 export default function Nav() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,7 +23,11 @@ export default function Nav() {
   function handleAnchor(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
     e.preventDefault();
     const target = document.getElementById(id);
-    if (!target) return;
+    if (!target) {
+      router.push(`/#${id}`);
+      setMenuOpen(false);
+      return;
+    }
     const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 68;
     const top = target.getBoundingClientRect().top + window.scrollY - navH - 12;
     window.scrollTo({ top, behavior: 'smooth' });
@@ -40,16 +47,16 @@ export default function Nav() {
       aria-label="Main navigation"
     >
       <div className={s.container}>
-        <a href="/" className={s.logo} aria-label="Karakaara home">
+        <Link href="/" className={s.logo} aria-label="Karakaara home">
           <Image src="/assets/images/horizontal.png" alt="Karakaara" className={s.logoImg} width={160} height={40} priority />
-        </a>
+        </Link>
 
         <ul className={s.links} role="list">
           {[['features','Features'],['how-it-works','How It Works'],['about','About']].map(([id, label]) => (
             <li key={id}>
-              <a href={`#${id}`} className={s.link} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
+              <Link href={`/#${id}`} className={s.link} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -79,9 +86,9 @@ export default function Nav() {
             transition={{ duration: 0.2 }}
           >
             {[['features','Features'],['how-it-works','How It Works'],['about','About']].map(([id, label]) => (
-              <a key={id} href={`#${id}`} className={s.mobileLink} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
+              <Link key={id} href={`/#${id}`} className={s.mobileLink} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
                 {label}
-              </a>
+              </Link>
             ))}
             <div className={s.mobileActions}>
               <button className={s.btnLogin} onClick={handleLogin}>Sign In</button>
