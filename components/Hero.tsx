@@ -1,20 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { handleLogin } from "@/lib/config";
+import { APP_URLS } from "@/lib/config";
 import s from "./Hero.module.css";
-
-const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.65, ease: EASE, delay },
-  }),
-};
 
 export default function Hero() {
   return (
@@ -44,12 +32,7 @@ export default function Hero() {
         <div className={s.row2Inner}>
           {/* Col 1: lotus shape + main.png logo */}
           <div className={s.col1}>
-            <motion.div
-              className={s.lotus}
-              aria-hidden
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
+            <div className={s.lotus} aria-hidden>
               <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
                 <ellipse
                   cx="26"
@@ -111,14 +94,9 @@ export default function Hero() {
                   fill="none"
                 />
               </svg>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={fadeUp}
-              custom={0.2}
-              initial="hidden"
-              animate="show"
-            >
+            <div className={s.fadeIn}>
               <Image
                 src="/assets/images/main.png"
                 alt="Karakaara"
@@ -127,45 +105,26 @@ export default function Hero() {
                 height={200}
                 priority
               />
-            </motion.div>
+            </div>
           </div>
 
           {/* Col 2: text content */}
           <div className={s.col2}>
-            <motion.div
-              className={s.eyebrow}
-              role="text"
-              variants={fadeUp}
-              custom={0.1}
-              initial="hidden"
-              animate="show"
-            >
+            <div className={`${s.eyebrow} ${s.fadeIn}`} role="text">
               ✦ &nbsp; Sri Lankan Matrimony Platform &nbsp; ✦
               <span className={s.eyebrowSi} lang="si">
                 ශ්‍රී ලාංකිකයන්ගේ හදවත් එකතුවන එකම වේදිකාව
               </span>
-            </motion.div>
+            </div>
 
-            <motion.p
-              className={s.tagline}
-              variants={fadeUp}
-              custom={0.3}
-              initial="hidden"
-              animate="show"
-            >
+            <p className={`${s.tagline} ${s.fadeIn}`}>
               <em>Where Hearts Meet Tradition</em>
               <span className={s.taglineSi} lang="si">
                 සම්ප්‍රදාය හා සදාකාලික බැදීම් හමු වන තැන
               </span>
-            </motion.p>
+            </p>
 
-            <motion.p
-              className={s.sub}
-              variants={fadeUp}
-              custom={0.4}
-              initial="hidden"
-              animate="show"
-            >
+            <p className={`${s.sub} ${s.fadeIn}`}>
               Sri Lanka&apos;s premier matrimony platform - connecting hearts
               through culture, tradition, and the timeless pursuit of meaningful
               partnership.
@@ -174,16 +133,10 @@ export default function Hero() {
                 තාක්‍ෂණය එකට මුහු කරමින් ඔබට ගැළපෙනම ජීවන සහකරු සොයා ගැනීමට
                 විශ්වාසනීය පියවරක්.
               </span>
-            </motion.p>
+            </p>
 
-            <motion.div
-              className={s.actions}
-              variants={fadeUp}
-              custom={0.5}
-              initial="hidden"
-              animate="show"
-            >
-              <button className={s.btnPrimary} onClick={handleLogin}>
+            <div className={`${s.actions} ${s.fadeIn}`}>
+              <a className={s.btnPrimary} href={APP_URLS.web}>
                 Begin Your Journey
                 <svg
                   width="16"
@@ -200,11 +153,11 @@ export default function Hero() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </button>
+              </a>
               <a href="#features" className={s.btnOutline}>
                 Explore More
               </a>
-            </motion.div>
+            </div>
 
             {/* <motion.div className={s.langs} aria-label="Available in Sinhala and English" variants={fadeUp} custom={0.6} initial="hidden" animate="show">
               <span lang="si">සිංහල</span>

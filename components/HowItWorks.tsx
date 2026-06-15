@@ -1,9 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
 import s from "./HowItWorks.module.css";
-
-const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 const STEPS = [
   {
@@ -83,13 +78,7 @@ export default function HowItWorks() {
       aria-labelledby="hiw-h"
     >
       <div className="container">
-        <motion.header
-          className="section-hdr"
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.65, ease: EASE }}
-        >
+        <header className="section-hdr">
           <span className="badge">Simple Steps</span>
           <h2 className="section-title" id="hiw-h">
             Your Journey Begins Here
@@ -97,18 +86,11 @@ export default function HowItWorks() {
           <p className="section-sub">
             Finding your life partner has never been this meaningful
           </p>
-        </motion.header>
+        </header>
 
         <div className={s.steps}>
-          {STEPS.map((step, i) => (
-            <motion.div
-              key={step.num}
-              className={s.step}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.65, ease: EASE, delay: i * 0.12 }}
-            >
+          {STEPS.map((step) => (
+            <div key={step.num} className={s.step}>
               <div className={s.numWrap}>
                 <div className={s.num}>{step.num}</div>
                 {step.hasLine && <div className={s.line} aria-hidden />}
@@ -120,7 +102,7 @@ export default function HowItWorks() {
                 <h3 className={s.title}>{step.title}</h3>
                 <p className={s.desc}>{step.desc}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

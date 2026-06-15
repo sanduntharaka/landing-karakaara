@@ -1,4 +1,12 @@
-.features { background: var(--white); }
+.features {
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-height: 420px;
+  scroll-margin-top: var(--nav-h);
+  background: var(--white);
+  color: var(--text);
+}
 
 .grid {
   display: grid;

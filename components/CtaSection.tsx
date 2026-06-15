@@ -1,9 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { APP_URLS, handleLogin, showToast } from '@/lib/config';
-
-const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 import s from './CtaSection.module.css';
 
 function handleAndroid() {
@@ -24,13 +21,7 @@ export default function CtaSection() {
       <div className={s.pattern} aria-hidden />
       <div className={s.glow} aria-hidden />
       <div className="container">
-        <motion.div
-          className={s.content}
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.65, ease: EASE }}
-        >
+        <div className={s.content}>
           <div className={s.lotus} aria-hidden>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
               <ellipse cx="22" cy="17" rx="4.5" ry="11" fill="#F3E9E4" opacity="0.4"/>
@@ -75,7 +66,7 @@ export default function CtaSection() {
               <span className={s.soon}>Soon</span>
             </button>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

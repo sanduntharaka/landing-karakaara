@@ -3,6 +3,18 @@
   top: 0; left: 0; right: 0;
   z-index: 100;
   height: var(--nav-h);
+  background: rgba(243,233,228,0);
+  box-shadow: none;
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+  transition: background-color .3s, box-shadow .3s, backdrop-filter .3s;
+}
+
+.scrolled {
+  background: rgba(243,233,228,.88);
+  box-shadow: 0 1px 0 rgba(209,164,110,.3), 0 2px 8px rgba(45,27,14,.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .container {
@@ -43,6 +55,9 @@
 .actions { display: flex; gap: 10px; align-items: center; }
 
 .btnLogin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: .88rem;
   font-weight: 600;
   color: var(--wine);
@@ -57,6 +72,9 @@
 .btnLogin:hover { background: var(--wine-lt); border-color: var(--wine); }
 
 .btnStart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: .88rem;
   font-weight: 600;
   color: var(--white);
@@ -104,6 +122,18 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  animation: mobileMenuIn .2s ease both;
+}
+
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0.01;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobileLink {

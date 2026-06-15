@@ -138,6 +138,13 @@
 
 .lotus {
   margin-bottom: 16px;
+  animation: lotusFloat 4s ease-in-out infinite;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: none;
+  animation: heroFadeIn 0.55s ease both;
 }
 
 .mainImg {
@@ -285,6 +292,33 @@
 .langSep {
   color: var(--gold);
   font-size: 1.1em;
+}
+
+@keyframes lotusFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0.01;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lotus,
+  .fadeIn {
+    animation: none;
+  }
 }
 
 

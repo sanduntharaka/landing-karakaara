@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
-import { handleLogin } from '@/lib/config';
+import { APP_URLS } from '@/lib/config';
 import s from './Nav.module.css';
 
 export default function Nav() {
@@ -35,14 +34,8 @@ export default function Nav() {
   }
 
   return (
-    <motion.nav
-      className={s.nav}
-      animate={scrolled ? 'scrolled' : 'top'}
-      variants={{
-        top:     { backgroundColor: 'rgba(243,233,228,0)', boxShadow: 'none', backdropFilter: 'blur(0px)' },
-        scrolled:{ backgroundColor: 'rgba(243,233,228,0.88)', boxShadow: '0 1px 0 rgba(209,164,110,.3), 0 2px 8px rgba(45,27,14,.07)', backdropFilter: 'blur(16px)' },
-      }}
-      transition={{ duration: 0.3 }}
+    <nav
+      className={`${s.nav} ${scrolled ? s.scrolled : ''}`}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -62,8 +55,8 @@ export default function Nav() {
         </ul>
 
         <div className={s.actions}>
-          <button className={s.btnLogin} onClick={handleLogin} aria-label="Sign in">Sign In</button>
-          <button className={s.btnStart} onClick={handleLogin} aria-label="Get started">Get Started</button>
+          <a className={s.btnLogin} href={APP_URLS.web} aria-label="Sign in">Sign In</a>
+          <a className={s.btnStart} href={APP_URLS.web} aria-label="Get started">Get Started</a>
         </div>
 
         <button
@@ -76,27 +69,19 @@ export default function Nav() {
         </button>
       </div>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className={s.mobileMenu}
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-          >
-            {[['features','Features'],['how-it-works','How It Works'],['about','About']].map(([id, label]) => (
-              <Link key={id} href={`/#${id}`} className={s.mobileLink} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
-                {label}
-              </Link>
-            ))}
-            <div className={s.mobileActions}>
-              <button className={s.btnLogin} onClick={handleLogin}>Sign In</button>
-              <button className={s.btnStart} onClick={handleLogin}>Get Started</button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+      {menuOpen && (
+        <div className={s.mobileMenu}>
+          {[['features','Features'],['how-it-works','How It Works'],['about','About']].map(([id, label]) => (
+            <Link key={id} href={`/#${id}`} className={s.mobileLink} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
+              {label}
+            </Link>
+          ))}
+          <div className={s.mobileActions}>
+            <a className={s.btnLogin} href={APP_URLS.web}>Sign In</a>
+            <a className={s.btnStart} href={APP_URLS.web}>Get Started</a>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }
