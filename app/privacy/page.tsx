@@ -8,7 +8,7 @@ import s from "./Privacy.module.css";
 export const metadata: Metadata = {
   title: "Privacy Policy | Karakaara",
   description:
-    "Learn how Karakaara collects, uses, shares, and protects personal information for members and PayHere payments.",
+    "Learn how Karakaara collects, uses, shares, and protects personal information for members.",
   alternates: { canonical: "https://karakaara.lk/privacy" },
   openGraph: {
     title: "Privacy Policy | Karakaara",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const privacySections = [
   {
     title: "Information We Collect",
-    body: "When you use Karakaara, we may collect information you provide during registration, profile creation, proposal submission, communication, support requests, and payment activity. This may include your name, age, gender, contact details, photos, profile details, preferences, device information, app usage information, and transaction references. Payment card details, CVV, and payment credentials are handled securely by PayHere and are not stored on Karakaara servers.",
+    body: "When you use Karakaara, we may collect information you provide during registration, profile creation, proposal submission, communication, support requests, and payment activity. This may include your name, age, gender, contact details, photos, profile details, preferences, device information, app usage information, and transaction references.",
   },
   {
     title: "Use of Information",
@@ -31,7 +31,7 @@ const privacySections = [
   },
   {
     title: "Information Sharing",
-    body: "We do not sell your personal information. Sensitive details such as photos and contact numbers are shared with another member only after you personally approve the request. We may share limited information with trusted service providers who help us operate Karakaara, including PayHere for payment processing, hosting providers, security tools, analytics providers, and support services. We may also disclose information when required by law or to protect members and the platform.",
+    body: "We do not sell your personal information. Sensitive details such as photos and contact numbers are shared with another member only after you personally approve the request. We may share limited information with trusted service providers who help us operate Karakaara, hosting providers, security tools, analytics providers, and support services. We may also disclose information when required by law or to protect members and the platform.",
   },
   {
     title: "Proposal Review and Member Safety",
@@ -49,10 +49,10 @@ const privacySections = [
     title: "Cookies and Tracking Technologies",
     body: "Our website and app may use cookies, analytics, or similar technologies to understand usage, improve performance, prevent abuse, and support marketing or service improvements. You may be able to limit cookies through your browser or device settings, but some features may not work correctly if cookies or tracking permissions are disabled.",
   },
-  {
-    title: "PayHere Payment Data",
-    body: "When you make a payment, the information required to complete the transaction is shared directly with PayHere. This may include card details, billing details, contact information, and transaction information. PayHere's data practices are governed by their own privacy policy, which we encourage you to review on their official website.",
-  },
+  // {
+  //   title: "PayHere Payment Data",
+  //   body: "When you make a payment, the information required to complete the transaction is shared directly with PayHere. This may include card details, billing details, contact information, and transaction information. PayHere's data practices are governed by their own privacy policy, which we encourage you to review on their official website.",
+  // },
   {
     title: "Changes to the Privacy Policy",
     body: "We may update this Privacy Policy from time to time as we improve Karakaara or meet legal, operational, or payment gateway requirements. Updated versions will be posted on this page.",
@@ -62,7 +62,7 @@ const privacySections = [
 const sinhalaPrivacySections = [
   {
     title: "අප රැස් කරන තොරතුරු",
-    body: "ඔබ කරකාර භාවිත කරන විට, ලියාපදිංචිය, ප්‍රොෆයිල් නිර්මාණය, යෝජනා ඉදිරිපත් කිරීම, සන්නිවේදනය, සහාය ඉල්ලීම් සහ ගෙවීම් ක්‍රියාකාරකම් අතරතුර ඔබ ලබා දෙන තොරතුරු අප රැස් කළ හැක. මෙයට ඔබේ නම, වයස, ස්ත්‍රී/පුරුෂ භාවය, සම්බන්ධතා විස්තර, ඡායාරූප, ප්‍රොෆයිල් විස්තර, කැමැත්තන්, උපාංග තොරතුරු, යෙදුම් භාවිත තොරතුරු සහ ගනුදෙනු යොමු අංක ඇතුළත් විය හැක. කාඩ්පත් විස්තර, CVV සහ ගෙවීම් අක්තපත්‍ර PayHere විසින් ආරක්ෂිතව හසුරුවන අතර කරකාර සේවාදායකවල ගබඩා නොකෙරේ.",
+    body: "ඔබ කරකාර භාවිත කරන විට, ලියාපදිංචිය, ප්‍රොෆයිල් නිර්මාණය, යෝජනා ඉදිරිපත් කිරීම, සන්නිවේදනය, සහාය ඉල්ලීම් සහ ගෙවීම් ක්‍රියාකාරකම් අතරතුර ඔබ ලබා දෙන තොරතුරු අප රැස් කළ හැක. මෙයට ඔබේ නම, වයස, ස්ත්‍රී/පුරුෂ භාවය, සම්බන්ධතා විස්තර, ඡායාරූප, ප්‍රොෆයිල් විස්තර, කැමැත්තන්, උපාංග තොරතුරු, යෙදුම් භාවිත තොරතුරු සහ ගනුදෙනු යොමු අංක ඇතුළත් විය හැක.",
   },
   {
     title: "තොරතුරු භාවිතය",
@@ -70,7 +70,7 @@ const sinhalaPrivacySections = [
   },
   {
     title: "තොරතුරු බෙදාගැනීම",
-    body: "අප ඔබේ පුද්ගලික තොරතුරු විකුණන්නේ නැත. ඡායාරූප සහ දුරකථන අංක වැනි සංවේදී තොරතුරු අනෙක් සාමාජිකයෙකු සමඟ බෙදාගන්නේ ඔබ පෞද්ගලිකව අනුමත කළ පසු පමණි. කරකාර ක්‍රියාත්මක කිරීමට උපකාර වන විශ්වාසනීය සේවා සපයන්නන් සමඟ, PayHere, hosting, ආරක්ෂක, විශ්ලේෂණ සහ සහාය සේවා ඇතුළු සීමිත තොරතුරු බෙදාගත හැක.",
+    body: "අප ඔබේ පුද්ගලික තොරතුරු විකුණන්නේ නැත. ඡායාරූප සහ දුරකථන අංක වැනි සංවේදී තොරතුරු අනෙක් සාමාජිකයෙකු සමඟ බෙදාගන්නේ ඔබ පෞද්ගලිකව අනුමත කළ පසු පමණි. කරකාර ක්‍රියාත්මක කිරීමට උපකාර වන විශ්වාසනීය සේවා සපයන්නන් සමඟ, hosting, ආරක්ෂක, විශ්ලේෂණ සහ සහාය සේවා ඇතුළු සීමිත තොරතුරු බෙදාගත හැක.",
   },
   {
     title: "යෝජනා සමාලෝචනය සහ සාමාජික ආරක්ෂාව",
@@ -88,10 +88,10 @@ const sinhalaPrivacySections = [
     title: "Cookies සහ අනුරූප තාක්ෂණයන්",
     body: "අපගේ වෙබ් අඩවිය සහ යෙදුම භාවිතය තේරුම් ගැනීමට, කාර්යසාධනය වැඩිදියුණු කිරීමට, අනිසි භාවිතය වැළැක්වීමට සහ සේවා වැඩිදියුණු කිරීම් සඳහා cookies, analytics හෝ සමාන තාක්ෂණයන් භාවිත කළ හැක.",
   },
-  {
-    title: "PayHere ගෙවීම් දත්ත",
-    body: "ඔබ ගෙවීමක් සිදු කරන විට, ගනුදෙනුව සම්පූර්ණ කිරීමට අවශ්‍ය තොරතුරු PayHere වෙත කෙලින්ම බෙදාගනු ලැබේ. මෙයට කාඩ්පත් විස්තර, බිල් කිරීමේ විස්තර, සම්බන්ධතා තොරතුරු සහ ගනුදෙනු තොරතුරු ඇතුළත් විය හැක. PayHere හි දත්ත භාවිතය ඔවුන්ගේම පෞද්ගලිකත්ව ප්‍රතිපත්තිය මඟින් පාලනය වේ.",
-  },
+  // {
+  //   title: "PayHere ගෙවීම් දත්ත",
+  //   body: "ඔබ ගෙවීමක් සිදු කරන විට, ගනුදෙනුව සම්පූර්ණ කිරීමට අවශ්‍ය තොරතුරු PayHere වෙත කෙලින්ම බෙදාගනු ලැබේ. මෙයට කාඩ්පත් විස්තර, බිල් කිරීමේ විස්තර, සම්බන්ධතා තොරතුරු සහ ගනුදෙනු තොරතුරු ඇතුළත් විය හැක. PayHere හි දත්ත භාවිතය ඔවුන්ගේම පෞද්ගලිකත්ව ප්‍රතිපත්තිය මඟින් පාලනය වේ.",
+  // },
   {
     title: "පෞද්ගලිකත්ව ප්‍රතිපත්තියේ වෙනස්කම්",
     body: "කරකාර වැඩිදියුණු කිරීම හෝ නීතිමය, මෙහෙයුම් හෝ ගෙවීම් ද්වාර අවශ්‍යතා සපුරාලීම සඳහා අප මෙම පෞද්ගලිකත්ව ප්‍රතිපත්තිය කලින් කලට යාවත්කාලීන කළ හැක. යාවත්කාලීන කළ අනුවාද මෙම පිටුවේ පළ කරනු ලැබේ.",
@@ -189,42 +189,32 @@ export default function PrivacyPage() {
                 <section className={s.policySection}>
                   <p>
                     karakaara.lk වෙබ් අඩවිය [&ldquo;Site&rdquo; /
-                    &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ
-                    කළමනාකරණය Lankovate සතු වන අතර, එය සහ එහි
-                    සහකාර හවුල්කරුවන් [සමූහිකව &ldquo;අපි&rdquo;,
-                    &ldquo;අපට&rdquo;, හෝ &ldquo;අපගේ&rdquo; ලෙස
-                    හඳුන්වනු ලැබේ] සහ තෙවන පාර්ශ්ව බලපත්‍ර
-                    දරන්නන් ඔබ වැනි භාවිත කරන්නෙකු
-                    [&ldquo;ඔබ&rdquo;] ජීවිත සහකාරිය/සහකරු සෙවීම
-                    සඳහා [&ldquo;විවාහ ප්‍රොෆයිල්&rdquo;] ප්‍රොෆයිලයක්
-                    සෑදීමට හැකිවන ඔන්ලයින් විවාහ වේදිකාවක් ලබා
-                    දෙයි.
+                    &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ කළමනාකරණය
+                    Lankovate සතු වන අතර, එය සහ එහි සහකාර හවුල්කරුවන් [සමූහිකව
+                    &ldquo;අපි&rdquo;, &ldquo;අපට&rdquo;, හෝ &ldquo;අපගේ&rdquo;
+                    ලෙස හඳුන්වනු ලැබේ] සහ තෙවන පාර්ශ්ව බලපත්‍ර දරන්නන් ඔබ වැනි
+                    භාවිත කරන්නෙකු [&ldquo;ඔබ&rdquo;] ජීවිත සහකාරිය/සහකරු සෙවීම
+                    සඳහා [&ldquo;විවාහ ප්‍රොෆයිල්&rdquo;] ප්‍රොෆයිලයක් සෑදීමට
+                    හැකිවන ඔන්ලයින් විවාහ වේදිකාවක් ලබා දෙයි.
                   </p>
-                  <p>
-                    අපගේ පෞද්ගලිකත්ව ප්‍රතිපත්තිය පහත කරුණු
-                    පැහැදිලි කරයි:
-                  </p>
+                  <p>අපගේ පෞද්ගලිකත්ව ප්‍රතිපත්තිය පහත කරුණු පැහැදිලි කරයි:</p>
                   <ul>
                     <li>
-                      Site හි භාවිත කරන්නෙකු ලෙස ඔබ විසින් ලබා
-                      දිය හැකි පුද්ගලික තොරතුරු සහ දත්ත මොනවාද,
+                      Site හි භාවිත කරන්නෙකු ලෙස ඔබ විසින් ලබා දිය හැකි පුද්ගලික
+                      තොරතුරු සහ දත්ත මොනවාද,
                     </li>
                     <li>
-                      cookies සහ වෙනත් තාක්ෂණයන් භාවිතයෙන් Site
-                      නරඹන්නන්ගෙන් සහ ඔබ ඇතුළු භාවිත
-                      කරන්නන්ගෙන් අප රැස් කරන තොරතුරු
-                      මොනවාද, සහ
+                      cookies සහ වෙනත් තාක්ෂණයන් භාවිතයෙන් Site නරඹන්නන්ගෙන් සහ
+                      ඔබ ඇතුළු භාවිත කරන්නන්ගෙන් අප රැස් කරන තොරතුරු මොනවාද, සහ
                     </li>
                     <li>
-                      එවැනි තොරතුරු අප ගබඩා කරන, භාවිත කරන,
-                      බෙදාගන්නා, හෙළිදරව් කරන සහ ආරක්ෂා කරන
-                      ආකාරය.
+                      එවැනි තොරතුරු අප ගබඩා කරන, භාවිත කරන, බෙදාගන්නා, හෙළිදරව්
+                      කරන සහ ආරක්ෂා කරන ආකාරය.
                     </li>
                   </ul>
                   <p>
-                    අපගේ පෞද්ගලිකත්ව ප්‍රතිපත්තිය karakaara.lk
-                    සහ Site ට අදාළ Karakaara ජංගම යෙදුමට
-                    අදාළ වේ.
+                    අපගේ පෞද්ගලිකත්ව ප්‍රතිපත්තිය karakaara.lk සහ Site ට අදාළ
+                    Karakaara ජංගම යෙදුමට අදාළ වේ.
                   </p>
                 </section>
                 {sinhalaPrivacySections.map((section) => (

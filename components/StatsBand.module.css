@@ -22,6 +22,19 @@
   gap: 4px;
 }
 
+.itemClickable {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.itemClickable:hover,
+.itemClickable:focus-visible {
+  background-color: rgba(255, 255, 255, .06);
+}
+
 .numRow {
   display: flex;
   align-items: baseline;

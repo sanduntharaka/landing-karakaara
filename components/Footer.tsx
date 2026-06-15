@@ -33,10 +33,7 @@ function FacebookIcon() {
 function WhatsAppIcon() {
   return (
     <svg viewBox="0 0 20 20" aria-hidden="true" className={s.icon}>
-      <path
-        d="M4.2 16.5 5 13.7a6.1 6.1 0 1 1 2.4 2.2l-3.2.6Z"
-        fill="none"
-      />
+      <path d="M4.2 16.5 5 13.7a6.1 6.1 0 1 1 2.4 2.2l-3.2.6Z" fill="none" />
       <path
         d="M8 7.5c.1-.3.3-.4.5-.4h.4c.1 0 .3 0 .4.3l.5 1.1c.1.2.1.4 0 .5l-.4.5c.4.7 1 1.3 1.8 1.7l.5-.6c.1-.1.3-.2.5-.1l1.2.6c.2.1.3.3.3.5 0 .6-.5 1.2-1.1 1.2-2.2-.1-5-2.5-5.2-4.7 0-.2 0-.4.1-.6Z"
         fill="currentColor"
@@ -117,9 +114,9 @@ export default function Footer() {
               <Link href="/privacy" className={s.link}>
                 Privacy Policy
               </Link>
-              <Link href="/return-policy" className={s.link}>
+              {/* <Link href="/return-policy" className={s.link}>
                 Return & Refund Policy
-              </Link>
+              </Link> */}
               <Link href="/business-terms" className={s.link}>
                 Terms & Conditions
               </Link>

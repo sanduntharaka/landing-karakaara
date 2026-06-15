@@ -1,12 +1,25 @@
+'use client';
+
+import { handleLogin } from "@/lib/config";
 import s from "./StatsBand.module.css";
 
 export default function StatsBand() {
   return (
-    <section className={s.band} aria-label="Platform statistics">
+    <section className={s.band} aria-label="Platform availability">
       <div className={s.inner}>
+        <button
+          type="button"
+          className={`${s.item} ${s.itemClickable}`}
+          onClick={handleLogin}
+          aria-label="Open the web platform"
+        >
+          <span className={s.num}>Now Live</span>
+          <span className={s.label}>Web platform is live</span>
+        </button>
+        <div className={s.sep} aria-hidden />
         <div className={s.item}>
           <span className={s.num}>Coming Soon</span>
-          <span className={s.label}>Platform will be available soon</span>
+          <span className={s.label}>Android app launching soon</span>
         </div>
       </div>
     </section>

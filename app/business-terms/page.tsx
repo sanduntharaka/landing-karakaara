@@ -8,7 +8,7 @@ import s from "../privacy/Privacy.module.css";
 export const metadata: Metadata = {
   title: "Terms and Conditions | Karakaara",
   description:
-    "Terms and conditions for using Karakaara matrimony services, paid features, and PayHere payments.",
+    "Terms and conditions for using Karakaara matrimony services, paid features.",
   alternates: { canonical: "https://karakaara.lk/business-terms" },
   openGraph: {
     title: "Terms and Conditions | Karakaara",
@@ -33,10 +33,10 @@ const termsSections = [
     title: "Service Information and Pricing",
     body: "We aim to describe Karakaara services, paid features, subscriptions, promotions, and pricing clearly. However, availability, pricing, features, and promotional offers may change from time to time. Any displayed price or offer may be subject to additional terms shown in the app or website.",
   },
-  {
-    title: "Orders and Payments",
-    body: "By purchasing a paid service through Karakaara, you authorize the applicable charge through your selected payment method. Payments are processed by PayHere or other approved payment channels. Karakaara does not store your full card number, CVV, or payment credentials on its own servers. We may refuse, cancel, or reverse a transaction where fraud, misuse, pricing error, or service abuse is suspected.",
-  },
+  // {
+  //   title: "Orders and Payments",
+  //   body: "By purchasing a paid service through Karakaara, you authorize the applicable charge through your selected payment method. Payments are processed by PayHere or other approved payment channels. Karakaara does not store your full card number, CVV, or payment credentials on its own servers. We may refuse, cancel, or reverse a transaction where fraud, misuse, pricing error, or service abuse is suspected.",
+  // },
   {
     title: "Returns and Refunds",
     body: "Our Return and Refund Policy explains when refund requests may be considered for digital services. Please review the Return and Refund Policy page before making a payment.",
@@ -80,10 +80,10 @@ const sinhalaTermsSections = [
     title: "සේවා තොරතුරු සහ මිල ගණන්",
     body: "කරකාර සේවාවන්, ගෙවූ පහසුකම්, subscriptions, ප්‍රවර්ධන සහ මිල ගණන් පැහැදිලිව විස්තර කිරීමට අප උත්සාහ කරමු. කෙසේ වෙතත්, availability, pricing, features සහ promotional offers කලින් කලට වෙනස් විය හැක. පෙන්වන ඕනෑම මිලක් හෝ offer එකක් යෙදුමේ හෝ වෙබ් අඩවියේ දක්වන අමතර නියමයන්ට යටත් විය හැක.",
   },
-  {
-    title: "ඇණවුම් සහ ගෙවීම්",
-    body: "කරකාර හරහා ගෙවූ සේවාවක් මිලදී ගැනීමෙන්, ඔබ තෝරාගත් ගෙවීම් ක්‍රමය හරහා අදාළ අය කිරීම සිදු කිරීමට ඔබ අවසර දෙයි. ගෙවීම් PayHere හෝ වෙනත් අනුමත payment channels හරහා සකසනු ලැබේ. කරකාර ඔබේ සම්පූර්ණ card number, CVV හෝ payment credentials තම සේවාදායකවල ගබඩා නොකරයි.",
-  },
+  // {
+  //   title: "ඇණවුම් සහ ගෙවීම්",
+  //   body: "කරකාර හරහා ගෙවූ සේවාවක් මිලදී ගැනීමෙන්, ඔබ තෝරාගත් ගෙවීම් ක්‍රමය හරහා අදාළ අය කිරීම සිදු කිරීමට ඔබ අවසර දෙයි. ගෙවීම් PayHere හෝ වෙනත් අනුමත payment channels හරහා සකසනු ලැබේ. කරකාර ඔබේ සම්පූර්ණ card number, CVV හෝ payment credentials තම සේවාදායකවල ගබඩා නොකරයි.",
+  // },
   {
     title: "ආපසු ගෙවීම්",
     body: "ඩිජිටල් සේවාවන් සඳහා refund ඉල්ලීම් සලකා බැලිය හැකි අවස්ථා අපගේ Return and Refund Policy පිටුවේ විස්තර කර ඇත. ගෙවීමක් කිරීමට පෙර එම ප්‍රතිපත්තිය සමාලෝචනය කරන්න.",
@@ -148,8 +148,8 @@ export default function BusinessTermsPage() {
                     &ldquo;Karakaara.lk&rdquo;] is owned and operated by
                     Lankovate [&ldquo;We&rdquo;, &ldquo;Us&rdquo;, or
                     &ldquo;Our&rdquo;]. By accessing or using the Site or the
-                    Karakaara mobile app, you as a user [&ldquo;You&rdquo;] agree
-                    to be bound by these Terms and Conditions
+                    Karakaara mobile app, you as a user [&ldquo;You&rdquo;]
+                    agree to be bound by these Terms and Conditions
                     [&ldquo;Terms&rdquo;]. If You do not agree to these Terms,
                     You must not use the Site or its related services
                     [&ldquo;Services&rdquo;].
@@ -164,11 +164,11 @@ export default function BusinessTermsPage() {
                       submitting a matrimonial profile [&ldquo;Matrimonial
                       Profile&rdquo;],
                     </li>
-                    <li>
+                    {/* <li>
                       the ordering, payment, and refund of paid features through
-                      the payment gateway PayHere
-                      [&ldquo;Payment Gateway&rdquo;], and
-                    </li>
+                      the payment gateway PayHere [&ldquo;Payment
+                      Gateway&rdquo;], and
+                    </li> */}
                     <li>
                       the rights and limitations of both You and Us in
                       connection with the Services.
@@ -205,37 +205,30 @@ export default function BusinessTermsPage() {
                 <section className={s.policySection}>
                   <p>
                     karakaara.lk වෙබ් අඩවිය [&ldquo;Site&rdquo; /
-                    &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ
-                    කළමනාකරණය Lankovate [&ldquo;අපි&rdquo;,
-                    &ldquo;අපට&rdquo;, හෝ &ldquo;අපගේ&rdquo;] සතු
-                    වේ. Site හෝ Karakaara ජංගම යෙදුමට ප්‍රවේශ
-                    වීමෙන් හෝ භාවිත කිරීමෙන්, ඔබ
-                    [&ldquo;ඔබ&rdquo;] මෙම Terms and Conditions
-                    [&ldquo;නියමයන්&rdquo;] වලට බැඳී සිටීමට
-                    එකඟ වේ. ඔබ මෙම නියමයන්ට එකඟ නොවේ නම්,
-                    Site හෝ ඊට අදාළ සේවාවන්
-                    [&ldquo;සේවාවන්&rdquo;] භාවිත නොකළ යුතුය.
+                    &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ කළමනාකරණය
+                    Lankovate [&ldquo;අපි&rdquo;, &ldquo;අපට&rdquo;, හෝ
+                    &ldquo;අපගේ&rdquo;] සතු වේ. Site හෝ Karakaara ජංගම යෙදුමට
+                    ප්‍රවේශ වීමෙන් හෝ භාවිත කිරීමෙන්, ඔබ [&ldquo;ඔබ&rdquo;] මෙම
+                    Terms and Conditions [&ldquo;නියමයන්&rdquo;] වලට බැඳී සිටීමට
+                    එකඟ වේ. ඔබ මෙම නියමයන්ට එකඟ නොවේ නම්, Site හෝ ඊට අදාළ
+                    සේවාවන් [&ldquo;සේවාවන්&rdquo;] භාවිත නොකළ යුතුය.
                   </p>
                   <p>මෙම නියමයන් පහත කරුණු පාලනය කරයි:</p>
                   <ul>
+                    <li>Site සහ සේවාවන් භාවිත කිරීමට ඔබේ සුදුසුකම,</li>
                     <li>
-                      Site සහ සේවාවන් භාවිත කිරීමට ඔබේ
-                      සුදුසුකම,
+                      සාමාජිකයෙකු ලෙස ඔබේ හැසිරීම සහ විවාහ ප්‍රොෆයිලයක්
+                      [&ldquo;විවාහ ප්‍රොෆයිල්&rdquo;] ඉදිරිපත් කිරීමේදී ඔබේ
+                      වගකීම්,
                     </li>
-                    <li>
-                      සාමාජිකයෙකු ලෙස ඔබේ හැසිරීම සහ
-                      විවාහ ප්‍රොෆයිලයක්
-                      [&ldquo;විවාහ ප්‍රොෆයිල්&rdquo;]
-                      ඉදිරිපත් කිරීමේදී ඔබේ වගකීම්,
-                    </li>
-                    <li>
+                    {/* <li>
                       PayHere [&ldquo;ගෙවීම් ද්වාරය&rdquo;]
                       හරහා ගෙවූ සේවා ඇණවුම් කිරීම, ගෙවීම
                       සහ refund, සහ
-                    </li>
+                    </li> */}
                     <li>
-                      සේවාවන් සම්බන්ධව ඔබ සහ අපි දෙදෙනාගේ
-                      අයිතිවාසිකම් සහ සීමාවන්.
+                      සේවාවන් සම්බන්ධව ඔබ සහ අපි දෙදෙනාගේ අයිතිවාසිකම් සහ
+                      සීමාවන්.
                     </li>
                   </ul>
                 </section>

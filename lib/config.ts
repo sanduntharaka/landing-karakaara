@@ -1,5 +1,5 @@
 export const APP_URLS = {
-  web: "#",
+  web: "https://proposal.karakaara.lk",
   playStore: "#",
   appStore: "#",
 } as const;

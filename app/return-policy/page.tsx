@@ -45,10 +45,10 @@ const refundSections = [
     title: "Return Shipping",
     body: "Return shipping does not apply because Karakaara does not sell or deliver physical goods through the website or app.",
   },
-  {
-    title: "Processing Time",
-    body: "Refund reviews are processed after we receive the required transaction details and verify the payment and service status. If approved, the refund processing time may depend on PayHere, your bank, card issuer, or payment provider.",
-  },
+  // {
+  //   title: "Processing Time",
+  //   body: "Refund reviews are processed after we receive the required transaction details and verify the payment and service status. If approved, the refund processing time may depend on PayHere, your bank, card issuer, or payment provider.",
+  // },
 ];
 
 const sinhalaRefundSections = [
@@ -76,10 +76,10 @@ const sinhalaRefundSections = [
     title: "Return Shipping",
     body: "කරකාර වෙබ් අඩවිය හෝ යෙදුම හරහා භෞතික භාණ්ඩ අලෙවි හෝ බෙදාහැරීම සිදු නොකරන බැවින් return shipping අදාළ නොවේ.",
   },
-  {
-    title: "සැකසුම් කාලය",
-    body: "අවශ්‍ය ගනුදෙනු විස්තර ලැබී ගෙවීම සහ සේවා තත්ත්වය තහවුරු කිරීමෙන් පසු refund ඉල්ලීම් සමාලෝචනය කරනු ලැබේ. අනුමත වුවහොත් refund සැකසුම් කාලය PayHere, ඔබේ බැංකුව, card issuer හෝ payment provider මත රඳා පවතී.",
-  },
+  // {
+  //   title: "සැකසුම් කාලය",
+  //   body: "අවශ්‍ය ගනුදෙනු විස්තර ලැබී ගෙවීම සහ සේවා තත්ත්වය තහවුරු කිරීමෙන් පසු refund ඉල්ලීම් සමාලෝචනය කරනු ලැබේ. අනුමත වුවහොත් refund සැකසුම් කාලය PayHere, ඔබේ බැංකුව, card issuer හෝ payment provider මත රඳා පවතී.",
+  // },
 ];
 
 export default function ReturnPolicyPage() {
@@ -167,27 +167,19 @@ export default function ReturnPolicyPage() {
                 <section className={s.policySection}>
                   <p>
                     karakaara.lk වෙබ් අඩවිය [&ldquo;Site&rdquo; /
-                    &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ
-                    කළමනාකරණය Lankovate [&ldquo;අපි&rdquo;,
-                    &ldquo;අපට&rdquo;, හෝ &ldquo;අපගේ&rdquo;] සතු
-                    වේ. මෙම Return and Refund Policy, ඔබ (&ldquo;ඔබ&rdquo;)
-                    Site හෝ Karakaara ජංගම යෙදුම හරහා මිලදී ගත්
-                    සියලු ගෙවූ ඩිජිටල් සේවාවන් [&ldquo;සේවාවන්&rdquo;]
-                    සඳහා අදාළ වේ. Site හි ගෙවීම් PayHere
-                    [&ldquo;ගෙවීම් ද්වාරය&rdquo;] හරහා සැකසේ.
+                    &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ කළමනාකරණය
+                    Lankovate [&ldquo;අපි&rdquo;, &ldquo;අපට&rdquo;, හෝ
+                    &ldquo;අපගේ&rdquo;] සතු වේ. මෙම Return and Refund Policy, ඔබ
+                    (&ldquo;ඔබ&rdquo;) Site හෝ Karakaara ජංගම යෙදුම හරහා මිලදී
+                    ගත් සියලු ගෙවූ ඩිජිටල් සේවාවන් [&ldquo;සේවාවන්&rdquo;] සඳහා
+                    අදාළ වේ. Site හි ගෙවීම් PayHere [&ldquo;ගෙවීම්
+                    ද්වාරය&rdquo;] හරහා සැකසේ.
                   </p>
                   <p>මෙම ප්‍රතිපත්තිය පහත කරුණු පැහැදිලි කරයි:</p>
                   <ul>
-                    <li>
-                      return හෝ refund ඉල්ලිය හැකි අවස්ථා,
-                    </li>
-                    <li>
-                      refund නොවන සේවා වර්ග, සහ
-                    </li>
-                    <li>
-                      refund ඉල්ලීම් සැකසීමේ ක්‍රමය සහ ඊට
-                      ගතවන කාලය.
-                    </li>
+                    <li>return හෝ refund ඉල්ලිය හැකි අවස්ථා,</li>
+                    <li>refund නොවන සේවා වර්ග, සහ</li>
+                    <li>refund ඉල්ලීම් සැකසීමේ ක්‍රමය සහ ඊට ගතවන කාලය.</li>
                   </ul>
                 </section>
                 {sinhalaRefundSections.map((section) => (
@@ -201,9 +193,9 @@ export default function ReturnPolicyPage() {
                   intro="refund පිළිබඳ ප්‍රශ්න හෝ ඉල්ලීම් සඳහා පහත ක්‍රමයකින් කරකාර අමතන්න. ඔබගේ ලියාපදිංචි දුරකථන අංකය හෝ email ලිපිනය, transaction reference, ගෙවූ දිනය සහ ගැටලුවේ කෙටි විස්තරයක් ඇතුළත් කරන්න."
                 />
                 <p className={s.closing}>
-                  මෙම Return and Refund Policy කලින් කලට යාවත්කාලීන කළ හැක.
-                  මෙම පිටුවේ පළ කර ඇති අනුවාදය, එය පළ කිරීමෙන් පසු කරන
-                  ඉල්ලීම් සඳහා අදාළ වේ.
+                  මෙම Return and Refund Policy කලින් කලට යාවත්කාලීන කළ හැක. මෙම
+                  පිටුවේ පළ කර ඇති අනුවාදය, එය පළ කිරීමෙන් පසු කරන ඉල්ලීම් සඳහා
+                  අදාළ වේ.
                 </p>
               </div>
             </div>
