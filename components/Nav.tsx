@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -9,6 +9,7 @@ import s from './Nav.module.css';
 
 export default function Nav() {
   const router = useRouter();
+  const navRef = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -18,6 +19,21 @@ export default function Nav() {
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', onClickOutside);
+    document.addEventListener('touchstart', onClickOutside as EventListener);
+    return () => {
+      document.removeEventListener('mousedown', onClickOutside);
+      document.removeEventListener('touchstart', onClickOutside as EventListener);
+    };
+  }, [menuOpen]);
 
   function handleAnchor(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
     e.preventDefault();
@@ -35,6 +51,7 @@ export default function Nav() {
 
   return (
     <nav
+      ref={navRef}
       className={`${s.nav} ${scrolled ? s.scrolled : ''}`}
       role="navigation"
       aria-label="Main navigation"
