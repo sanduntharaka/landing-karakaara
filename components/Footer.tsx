@@ -120,6 +120,9 @@ export default function Footer() {
               <Link href="/business-terms" className={s.link}>
                 Terms & Conditions
               </Link>
+              <Link href="/delete-account" className={s.link}>
+                Delete Account
+              </Link>
             </div>
           </nav>
         </div>

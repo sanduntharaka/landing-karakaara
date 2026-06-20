@@ -123,11 +123,14 @@
 
 .policySection p + p,
 .policySection p + ul,
-.policySection ul + p {
+.policySection ul + p,
+.policySection p + ol,
+.policySection ol + p {
   margin-top: 12px;
 }
 
-.policySection ul {
+.policySection ul,
+.policySection ol {
   padding-left: 1.4em;
   color: var(--muted);
   line-height: 1.8;
