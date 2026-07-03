@@ -120,6 +120,9 @@ export default function Footer() {
               <Link href="/business-terms" className={s.link}>
                 Terms & Conditions
               </Link>
+              <Link href="/child-safety-standards" className={s.link}>
+                Child Safety Standards
+              </Link>
               <Link href="/delete-account" className={s.link}>
                 Delete Account
               </Link>

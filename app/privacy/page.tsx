@@ -173,6 +173,14 @@ export default function PrivacyPage() {
                   By continuing to use Karakaara, you agree to the practices
                   described in this Privacy Policy.
                 </p>
+                <p className={s.closing}>
+                  For information on how we prevent child sexual abuse and
+                  exploitation on Karakaara, see our{" "}
+                  <Link href="/child-safety-standards">
+                    Child Safety Standards
+                  </Link>
+                  .
+                </p>
               </div>
             </div>
           </div>
@@ -230,6 +238,14 @@ export default function PrivacyPage() {
                 <p className={s.closing}>
                   කරකාර භාවිතය දිගටම කරගෙන යාමෙන්, ඔබ මෙම පෞද්ගලිකත්ව
                   ප්‍රතිපත්තියේ විස්තර කර ඇති භාවිතයන්ට එකඟ වන බව සලකනු ලැබේ.
+                </p>
+                <p className={s.closing}>
+                  ළමා ලිංගික අපයෝජනය සහ සූරාකෑම වැළැක්වීම සඳහා කරකාර ගන්නා
+                  ක්‍රියාමාර්ග පිළිබඳ තොරතුරු සඳහා, අපගේ{" "}
+                  <Link href="/child-safety-standards">
+                    ළමා ආරක්ෂණ ප්‍රමිතීන්
+                  </Link>{" "}
+                  බලන්න.
                 </p>
               </div>
             </div>
