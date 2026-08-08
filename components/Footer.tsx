@@ -58,9 +58,9 @@ export default function Footer() {
             </Link>
             <p className={s.tagline}>Where Hearts Meet Tradition</p>
             <p className={s.desc}>
-              Sri Lanka&apos;s premier matrimony platform - connecting hearts
-              through tradition, culture, and the timeless pursuit of
-              partnership.
+              Sri Lanka&apos;s premier matrimony platform - connecting
+              individuals and families through tradition, culture, and the
+              timeless pursuit of partnership.
             </p>
           </div>
 
@@ -72,6 +72,9 @@ export default function Footer() {
               </Link>
               <Link href="/#how-it-works" className={s.link}>
                 How It Works
+              </Link>
+              <Link href="/#pricing" className={s.link}>
+                Pricing
               </Link>
               <Link href="/#download" className={s.link}>
                 Download
@@ -114,9 +117,9 @@ export default function Footer() {
               <Link href="/privacy" className={s.link}>
                 Privacy Policy
               </Link>
-              {/* <Link href="/return-policy" className={s.link}>
+              <Link href="/return-policy" className={s.link}>
                 Return & Refund Policy
-              </Link> */}
+              </Link>
               <Link href="/business-terms" className={s.link}>
                 Terms & Conditions
               </Link>
@@ -132,7 +135,7 @@ export default function Footer() {
 
         <div className={s.bottom}>
           <p>
-            © 2026 Karakaara &nbsp;·&nbsp; Lankovate &nbsp;·&nbsp; All rights
+            © 2026 Karakaara &nbsp;·&nbsp; Lankovate Technologies &nbsp;·&nbsp; All rights
             reserved.
           </p>
           <p className={s.love}>Made with ♥ for Sri Lanka</p>

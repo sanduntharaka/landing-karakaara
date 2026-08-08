@@ -54,7 +54,7 @@ const STEPS = [
   {
     num: "3",
     title: "Connect & Meet",
-    desc: "When hearts align, express your interest and begin the journey toward a blessed, traditional union.",
+    desc: "Express your interest in a proposal. When both sides accept, unlock full contact details for a one-time connection fee and begin the journey toward a blessed, traditional union.",
     icon: (
       <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
         <path
@@ -64,6 +64,34 @@ const STEPS = [
           stroke="#8B2635"
           strokeWidth="1.5"
         />
+      </svg>
+    ),
+    hasLine: true,
+  },
+  {
+    num: "4",
+    title: "Pay Only When It Matters",
+    desc: "Browsing and publishing proposals is completely free. Once both parties have mutually accepted, connection credits start from LKR 300 to unlock direct contact details and begin the conversation. No subscriptions, no hidden charges.",
+    icon: (
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <rect
+          x="8"
+          y="16"
+          width="28"
+          height="20"
+          rx="3"
+          fill="#D1A46E"
+          fillOpacity="0.12"
+          stroke="#8B2635"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M14 16v-3a8 8 0 0 1 16 0v3"
+          stroke="#D1A46E"
+          strokeWidth="1.5"
+          fill="none"
+        />
+        <circle cx="22" cy="26" r="3" fill="#8B2635" fillOpacity="0.4" />
       </svg>
     ),
     hasLine: false,

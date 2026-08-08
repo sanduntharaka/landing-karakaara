@@ -62,7 +62,7 @@ export default function Nav() {
         </Link>
 
         <ul className={s.links} role="list">
-          {[['features','Features'],['how-it-works','How It Works'],['about','About']].map(([id, label]) => (
+          {[['features','Features'],['how-it-works','How It Works'],['pricing','Pricing'],['about','About']].map(([id, label]) => (
             <li key={id}>
               <Link href={`/#${id}`} className={s.link} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
                 {label}
@@ -88,7 +88,7 @@ export default function Nav() {
 
       {menuOpen && (
         <div className={s.mobileMenu}>
-          {[['features','Features'],['how-it-works','How It Works'],['about','About']].map(([id, label]) => (
+          {[['features','Features'],['how-it-works','How It Works'],['pricing','Pricing'],['about','About']].map(([id, label]) => (
             <Link key={id} href={`/#${id}`} className={s.mobileLink} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
               {label}
             </Link>

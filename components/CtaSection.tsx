@@ -35,7 +35,7 @@ export default function CtaSection() {
           </div>
 
           <span className="badge-light">Begin Today</span>
-          <h2 className={s.title} id="cta-h">Your Perfect Match Awaits</h2>
+          <h2 className={s.title} id="cta-h">Your Life Partner Awaits</h2>
           <p className={s.sub}>Join thousands of Sri Lankans who have found their life partners through Karakaara.</p>
 
           <div className={s.btns}>

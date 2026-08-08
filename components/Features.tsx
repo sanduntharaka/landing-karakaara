@@ -11,7 +11,7 @@ const FEATURES = [
   {
     icon: "diaspora",
     title: "Diaspora Friendly",
-    desc: "Connect across borders. Whether you're in Colombo or London, find matches who share your Sri Lankan roots and values.",
+    desc: "Connect across borders. Whether you're in Colombo or London, find life partners who share your Sri Lankan roots and values.",
   },
   {
     icon: "privacy",
@@ -22,6 +22,11 @@ const FEATURES = [
     icon: "platform",
     title: "Modern Platform",
     desc: "Available on iOS, Android, and Web - seamlessly bridging traditional matchmaking with the digital age, wherever you are.",
+  },
+  {
+    icon: "verified",
+    title: "Verified Profiles",
+    desc: "Every proposal is reviewed and ID-verified before publishing, so you can browse with confidence.",
   },
 ];
 
@@ -49,6 +54,13 @@ function FeatureIcon({ name }: { name: string }) {
           <circle cx="17" cy="17" r="4" fill="#D1A46E" opacity="0.25" />
           <path d="M14.5 17l2 2 4-4" stroke="#D1A46E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M11 24l6-4 6 4" stroke="#8B2635" strokeWidth="1" opacity="0.4" fill="none" strokeLinecap="round" />
+        </svg>
+      );
+    case "verified":
+      return (
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+          <path d="M17 3l3.5 2 4-0.7 1.3 3.9 3.4 2.3-1.6 3.8 1.6 3.8-3.4 2.3-1.3 3.9-4-0.7L17 27l-3.5-2-4 0.7-1.3-3.9-3.4-2.3 1.6-3.8-1.6-3.8 3.4-2.3 1.3-3.9 4 0.7L17 3z" fill="#8B2635" opacity="0.12" stroke="#8B2635" strokeWidth="1.4" strokeLinejoin="round" />
+          <path d="M12.5 17l3 3 6-7" stroke="#D1A46E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
     default:

@@ -131,7 +131,7 @@ export default function PrivacyPage() {
                   <p>
                     The website karakaara.lk [the &ldquo;Site&rdquo; /
                     &ldquo;Karakaara.lk&rdquo;] is owned and operated by
-                    Lankovate, which together with its affiliate partners
+                    Lankovate Technologies, which together with its affiliate partners
                     [collectively referred to as &ldquo;We&rdquo;,
                     &ldquo;Us&rdquo;, or &ldquo;Our&rdquo;] and third-party
                     licensors provides an online matrimony platform where you as
@@ -198,7 +198,7 @@ export default function PrivacyPage() {
                   <p>
                     karakaara.lk වෙබ් අඩවිය [&ldquo;Site&rdquo; /
                     &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ කළමනාකරණය
-                    Lankovate සතු වන අතර, එය සහ එහි සහකාර හවුල්කරුවන් [සමූහිකව
+                    Lankovate Technologies සතු වන අතර, එය සහ එහි සහකාර හවුල්කරුවන් [සමූහිකව
                     &ldquo;අපි&rdquo;, &ldquo;අපට&rdquo;, හෝ &ldquo;අපගේ&rdquo;
                     ලෙස හඳුන්වනු ලැබේ] සහ තෙවන පාර්ශ්ව බලපත්‍ර දරන්නන් ඔබ වැනි
                     භාවිත කරන්නෙකු [&ldquo;ඔබ&rdquo;] ජීවිත සහකාරිය/සහකරු සෙවීම

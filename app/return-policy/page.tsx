@@ -113,7 +113,7 @@ export default function ReturnPolicyPage() {
                   <p>
                     The website karakaara.lk [the &ldquo;Site&rdquo; /
                     &ldquo;Karakaara.lk&rdquo;] is owned and operated by
-                    Lankovate [&ldquo;We&rdquo;, &ldquo;Us&rdquo;, or
+                    Lankovate Technologies [&ldquo;We&rdquo;, &ldquo;Us&rdquo;, or
                     &ldquo;Our&rdquo;]. This Return and Refund Policy applies to
                     all paid digital services [&ldquo;Services&rdquo;] purchased
                     by you as a user [&ldquo;You&rdquo;] through the Site or the
@@ -168,7 +168,7 @@ export default function ReturnPolicyPage() {
                   <p>
                     karakaara.lk වෙබ් අඩවිය [&ldquo;Site&rdquo; /
                     &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ කළමනාකරණය
-                    Lankovate [&ldquo;අපි&rdquo;, &ldquo;අපට&rdquo;, හෝ
+                    Lankovate Technologies [&ldquo;අපි&rdquo;, &ldquo;අපට&rdquo;, හෝ
                     &ldquo;අපගේ&rdquo;] සතු වේ. මෙම Return and Refund Policy, ඔබ
                     (&ldquo;ඔබ&rdquo;) Site හෝ Karakaara ජංගම යෙදුම හරහා මිලදී
                     ගත් සියලු ගෙවූ ඩිජිටල් සේවාවන් [&ldquo;සේවාවන්&rdquo;] සඳහා

@@ -105,7 +105,7 @@ export default function ChildSafetyStandardsPage() {
                 <section className={s.policySection}>
                   <p>
                     Karakaara is an online matrimony platform operated by
-                    Lankovate, intended exclusively for adults seeking a life
+                    Lankovate Technologies, intended exclusively for adults seeking a life
                     partner. The safety of every member, and the prevention of
                     child sexual abuse and exploitation (CSAE) in particular,
                     is a fundamental part of how we operate our website and
@@ -153,7 +153,7 @@ export default function ChildSafetyStandardsPage() {
               <div className={s.sections} lang="si">
                 <section className={s.policySection}>
                   <p>
-                    කරකාර යනු Lankovate විසින් මෙහෙයවනු ලබන, ජීවිත සහකාරියක්/
+                    කරකාර යනු Lankovate Technologies විසින් මෙහෙයවනු ලබන, ජීවිත සහකාරියක්/
                     සහකරුවෙකු සොයන වැඩිහිටියන් සඳහා පමණක් වූ ඔන්ලයින් විවාහ
                     වේදිකාවකි. සෑම සාමාජිකයෙකුගේම ආරක්ෂාව, විශේෂයෙන්ම ළමා
                     ලිංගික අපයෝජනය සහ සූරාකෑම (CSAE) වැළැක්වීම, අපගේ වෙබ් අඩවිය

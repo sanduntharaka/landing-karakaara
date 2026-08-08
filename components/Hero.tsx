@@ -125,9 +125,9 @@ export default function Hero() {
             </p>
 
             <p className={`${s.sub} ${s.fadeIn}`}>
-              Sri Lanka&apos;s premier matrimony platform - connecting hearts
-              through culture, tradition, and the timeless pursuit of meaningful
-              partnership.
+              Sri Lanka&apos;s premier matrimony platform - connecting
+              individuals and families through culture, tradition, and the
+              timeless pursuit of meaningful partnership.
               <span className={s.subSi} lang="si">
                 ශ්‍රී ලංකාවේ ප්‍රමුඛ විවාහ වේදිකාව - සංස්කෘතිය, සම්ප්‍රදාය හා
                 තාක්‍ෂණය එකට මුහු කරමින් ඔබට ගැළපෙනම ජීවන සහකරු සොයා ගැනීමට

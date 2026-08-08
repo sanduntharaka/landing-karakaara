@@ -179,7 +179,7 @@ export default function ProposalDemo() {
               <span className={s.meta}>
                 {p.religion} &middot; {p.profession}
               </span>
-              <span className={s.viewLink}>Sign in to view profile &rarr;</span>
+              <span className={s.viewLink}>Sign in to respond to this proposal &rarr;</span>
             </button>
           ))}
         </div>

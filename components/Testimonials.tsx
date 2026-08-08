@@ -34,8 +34,11 @@ export default function Testimonials() {
           <p className="section-sub">
             Karakaara was born from a simple belief - finding a life partner
             should honour your culture, involve your family, and feel completely
-            yours. We are a team of Sri Lankans passionate about making that
-            happen for every community, at home and around the world.
+            yours. Karakaara is a matrimonial matchmaking platform, not a
+            dating app - every profile and proposal here is created with
+            marriage in mind. We are a team of Sri Lankans passionate about
+            making that happen for every community, at home and around the
+            world.
           </p>
         </header>
 

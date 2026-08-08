@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "sinhala marriage",
     "diaspora",
   ],
-  authors: [{ name: "Karakaara - Lankovate" }],
+  authors: [{ name: "Karakaara - Lankovate Technologies" }],
   robots: { index: true, follow: true },
   alternates: { canonical: "https://karakaara.lk/" },
   openGraph: {

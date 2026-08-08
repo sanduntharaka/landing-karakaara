@@ -4,6 +4,7 @@ import StatsBand from "@/components/StatsBand";
 import Features from "@/components/Features";
 import OrnDivider from "@/components/OrnDivider";
 import HowItWorks from "@/components/HowItWorks";
+import Pricing from "@/components/Pricing";
 import ProposalDemo from "@/components/ProposalDemo";
 import Testimonials from "@/components/Testimonials";
 import CtaSection from "@/components/CtaSection";
@@ -21,6 +22,7 @@ export default function Home() {
         <OrnDivider />
         <HowItWorks />
         <OrnDivider />
+        <Pricing />
         <OrnDivider />
         <Testimonials />
         <CtaSection />

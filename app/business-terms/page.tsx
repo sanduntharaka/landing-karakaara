@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const termsSections = [
   {
     title: "Use of the Website and App",
-    body: "Welcome to Karakaara. These Terms and Conditions govern your use of our website, app, and matrimony services. You must use Karakaara only for lawful, genuine, and respectful matrimony-related purposes. You are responsible for maintaining the confidentiality of your account and for all activity under your account.",
+    body: "Welcome to Karakaara. These Terms and Conditions govern your use of our website, app, and matrimony services. Karakaara is a matrimonial matchmaking service intended to help members find a marriage partner - it is not a dating app, and it must not be used for casual dating, hookups, or any purpose unrelated to marriage. You must use Karakaara only for lawful, genuine, and respectful matrimony-related purposes. You are responsible for maintaining the confidentiality of your account and for all activity under your account.",
   },
   {
     title: "Eligibility and Account Information",
@@ -51,7 +51,7 @@ const termsSections = [
   },
   {
     title: "Intellectual Property",
-    body: "All content, branding, logos, designs, software, text, graphics, and materials made available by Karakaara are protected by intellectual property rights and belong to Karakaara, Lankovate, or their licensors. You may not copy, reproduce, distribute, or modify Karakaara materials without prior written permission.",
+    body: "All content, branding, logos, designs, software, text, graphics, and materials made available by Karakaara are protected by intellectual property rights and belong to Karakaara, Lankovate Technologies, or their licensors. You may not copy, reproduce, distribute, or modify Karakaara materials without prior written permission.",
   },
   {
     title: "Service Availability",
@@ -70,7 +70,7 @@ const termsSections = [
 const sinhalaTermsSections = [
   {
     title: "වෙබ් අඩවිය සහ යෙදුම භාවිතය",
-    body: "කරකාර වෙත සාදරයෙන් පිළිගනිමු. මෙම Terms and Conditions අපගේ වෙබ් අඩවිය, යෙදුම සහ විවාහ යෝජනා සේවාවන් භාවිතයට අදාළ වේ. කරකාර භාවිත කළ යුත්තේ නීත්‍යානුකූල, සැබෑ සහ ගෞරවණීය විවාහ යෝජනා සම්බන්ධ අරමුණු සඳහා පමණි. ඔබේ ගිණුමේ රහස්‍යතාව පවත්වා ගැනීම සහ එම ගිණුම යටතේ සිදුවන සියලු ක්‍රියාකාරකම් සඳහා ඔබ වගකිව යුතුය.",
+    body: "කරකාර වෙත සාදරයෙන් පිළිගනිමු. මෙම Terms and Conditions අපගේ වෙබ් අඩවිය, යෙදුම සහ විවාහ යෝජනා සේවාවන් භාවිතයට අදාළ වේ. කරකාර යනු විවාහ සහකරුවෙකු සොයාගැනීමට උපකාර වන විවාහ යෝජනා සේවාවකි - එය dating app එකක් නොවේ, සහ අනියම් ඇසුර (casual dating) හෝ විවාහයට අදාළ නොවන කිසිදු අරමුණක් සඳහා භාවිත නොකළ යුතුය. කරකාර භාවිත කළ යුත්තේ නීත්‍යානුකූල, සැබෑ සහ ගෞරවණීය විවාහ යෝජනා සම්බන්ධ අරමුණු සඳහා පමණි. ඔබේ ගිණුමේ රහස්‍යතාව පවත්වා ගැනීම සහ එම ගිණුම යටතේ සිදුවන සියලු ක්‍රියාකාරකම් සඳහා ඔබ වගකිව යුතුය.",
   },
   {
     title: "සුදුසුකම් සහ ගිණුම් තොරතුරු",
@@ -98,7 +98,7 @@ const sinhalaTermsSections = [
   },
   {
     title: "බුද්ධිමය දේපළ",
-    body: "කරකාර විසින් ලබාදෙන සියලුම content, branding, logos, designs, software, text, graphics සහ materials බුද්ධිමය දේපළ අයිතිවාසිකම් මඟින් ආරක්ෂා කර ඇති අතර කරකාර, Lankovate හෝ ඔවුන්ගේ licensors සතුය. කරකාර materials පූර්ව ලිඛිත අවසරයකින් තොරව copy, reproduce, distribute හෝ modify කළ නොහැක.",
+    body: "කරකාර විසින් ලබාදෙන සියලුම content, branding, logos, designs, software, text, graphics සහ materials බුද්ධිමය දේපළ අයිතිවාසිකම් මඟින් ආරක්ෂා කර ඇති අතර කරකාර, Lankovate Technologies හෝ ඔවුන්ගේ licensors සතුය. කරකාර materials පූර්ව ලිඛිත අවසරයකින් තොරව copy, reproduce, distribute හෝ modify කළ නොහැක.",
   },
   {
     title: "සේවා ලබාගැනීමේ හැකියාව",
@@ -146,7 +146,7 @@ export default function BusinessTermsPage() {
                   <p>
                     The website karakaara.lk [the &ldquo;Site&rdquo; /
                     &ldquo;Karakaara.lk&rdquo;] is owned and operated by
-                    Lankovate [&ldquo;We&rdquo;, &ldquo;Us&rdquo;, or
+                    Lankovate Technologies [&ldquo;We&rdquo;, &ldquo;Us&rdquo;, or
                     &ldquo;Our&rdquo;]. By accessing or using the Site or the
                     Karakaara mobile app, you as a user [&ldquo;You&rdquo;]
                     agree to be bound by these Terms and Conditions
@@ -206,7 +206,7 @@ export default function BusinessTermsPage() {
                   <p>
                     karakaara.lk වෙබ් අඩවිය [&ldquo;Site&rdquo; /
                     &ldquo;Karakaara.lk&rdquo;] හිමිකාරිත්වය සහ කළමනාකරණය
-                    Lankovate [&ldquo;අපි&rdquo;, &ldquo;අපට&rdquo;, හෝ
+                    Lankovate Technologies [&ldquo;අපි&rdquo;, &ldquo;අපට&rdquo;, හෝ
                     &ldquo;අපගේ&rdquo;] සතු වේ. Site හෝ Karakaara ජංගම යෙදුමට
                     ප්‍රවේශ වීමෙන් හෝ භාවිත කිරීමෙන්, ඔබ [&ldquo;ඔබ&rdquo;] මෙම
                     Terms and Conditions [&ldquo;නියමයන්&rdquo;] වලට බැඳී සිටීමට
