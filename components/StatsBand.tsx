@@ -14,10 +14,16 @@ export default function StatsBand() {
           <span className={s.label}>Web platform is live</span>
         </a>
         <div className={s.sep} aria-hidden />
-        <div className={s.item}>
-          <span className={s.num}>Coming Soon</span>
-          <span className={s.label}>Android app launching soon</span>
-        </div>
+        <a
+          href={APP_URLS.playStore}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${s.item} ${s.itemClickable}`}
+          aria-label="Get the Android app on Google Play"
+        >
+          <span className={s.num}>Now Live</span>
+          <span className={s.label}>Android app on Google Play</span>
+        </a>
       </div>
     </section>
   );

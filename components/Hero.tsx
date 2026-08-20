@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { APP_URLS } from "@/lib/config";
+import { APP_URLS, handleLogin } from "@/lib/config";
 import s from "./Hero.module.css";
 
 export default function Hero() {
@@ -136,7 +136,7 @@ export default function Hero() {
             </p>
 
             <div className={`${s.actions} ${s.fadeIn}`}>
-              <a className={s.btnPrimary} href={APP_URLS.web}>
+              <a className={s.btnPrimary} href={APP_URLS.web} onClick={(e) => { e.preventDefault(); handleLogin(); }}>
                 Begin Your Journey
                 <svg
                   width="16"

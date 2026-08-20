@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { APP_URLS } from "@/lib/config";
+import { APP_URLS, redirectToAppOrWeb } from "@/lib/config";
 import s from "./ProposalDemo.module.css";
 
 type Proposal = {
@@ -68,7 +68,7 @@ const DEFAULT_FILTERS: Filters = { gender: "Any", location: "Any District", reli
 const MAX_VISIBLE = 6;
 
 function goToLogin() {
-  window.location.href = APP_URLS.login;
+  redirectToAppOrWeb(APP_URLS.login);
 }
 
 function LockIcon() {

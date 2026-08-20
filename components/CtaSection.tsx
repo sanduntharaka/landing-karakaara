@@ -54,7 +54,6 @@ export default function CtaSection() {
                 <path d="M8 10v4M12 10v4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
               </svg>
               Google Play
-              <span className={s.soon}>Soon</span>
             </button>
 
             <button className={s.btnGhost} onClick={handleIOS}>

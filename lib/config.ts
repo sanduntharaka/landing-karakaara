@@ -1,12 +1,12 @@
 export const APP_URLS = {
   web: "https://proposal.karakaara.lk",
   login: "https://proposal.karakaara.lk/auth/login",
-  playStore: "#",
+  playStore: "https://play.google.com/store/apps/details?id=com.lankovate.karakaara&pcampaignid=web_share",
   appStore: "#",
 } as const;
 
 export const APP_STORE_SETTINGS = {
-  android: false,
+  android: true,
   appleStore: false,
 } as const;
 
@@ -20,14 +20,18 @@ export function isIOS(): boolean {
   return /iphone|ipad|ipod/i.test(navigator.userAgent);
 }
 
-export function handleLogin(): void {
+export function redirectToAppOrWeb(webUrl: string): void {
   if (isAndroid() && APP_STORE_SETTINGS.android) {
     window.location.href = APP_URLS.playStore;
   } else if (isIOS() && APP_STORE_SETTINGS.appleStore) {
     window.location.href = APP_URLS.appStore;
   } else {
-    window.location.href = APP_URLS.web;
+    window.location.href = webUrl;
   }
+}
+
+export function handleLogin(): void {
+  redirectToAppOrWeb(APP_URLS.web);
 }
 
 export function showToast(message: string): void {

@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { APP_URLS } from '@/lib/config';
+import { APP_URLS, handleLogin } from '@/lib/config';
 import s from './Nav.module.css';
 
 export default function Nav() {
@@ -72,8 +72,8 @@ export default function Nav() {
         </ul>
 
         <div className={s.actions}>
-          <a className={s.btnLogin} href={APP_URLS.web} aria-label="Sign in">Sign In</a>
-          <a className={s.btnStart} href={APP_URLS.web} aria-label="Get started">Get Started</a>
+          <a className={s.btnLogin} href={APP_URLS.web} aria-label="Sign in" onClick={(e) => { e.preventDefault(); handleLogin(); }}>Sign In</a>
+          <a className={s.btnStart} href={APP_URLS.web} aria-label="Get started" onClick={(e) => { e.preventDefault(); handleLogin(); }}>Get Started</a>
         </div>
 
         <button
@@ -94,8 +94,8 @@ export default function Nav() {
             </Link>
           ))}
           <div className={s.mobileActions}>
-            <a className={s.btnLogin} href={APP_URLS.web}>Sign In</a>
-            <a className={s.btnStart} href={APP_URLS.web}>Get Started</a>
+            <a className={s.btnLogin} href={APP_URLS.web} onClick={(e) => { e.preventDefault(); handleLogin(); }}>Sign In</a>
+            <a className={s.btnStart} href={APP_URLS.web} onClick={(e) => { e.preventDefault(); handleLogin(); }}>Get Started</a>
           </div>
         </div>
       )}
