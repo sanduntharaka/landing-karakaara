@@ -11,7 +11,7 @@ type Plan = {
 
 const PLANS: Plan[] = [
   { id: "starter", name: "Starter", price: 300, connections: 1, perConnection: 300, popular: false },
-  { id: "basic", name: "Basic", price: 1000, connections: 5, perConnection: 200, popular: false },
+  { id: "basic", name: "Basic", price: 1000, connections: 3, perConnection: 200, popular: false },
   { id: "popular", name: "Popular", price: 1800, connections: 10, perConnection: 180, popular: true },
   { id: "premium", name: "Premium", price: 3000, connections: 20, perConnection: 150, popular: false },
 ];
