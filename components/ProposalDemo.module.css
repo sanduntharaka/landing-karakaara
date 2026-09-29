@@ -65,16 +65,23 @@
 
 .searchBtn:hover {
   background: #6e1c27;
-  transform: translateY(-1px);
 }
+.searchBtn:disabled { cursor: progress; opacity: .92; }
+
+.icon, .spin { display: inline-flex; }
+.spin { animation: searchPulse .9s ease-in-out infinite; }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  perspective: 1200px;
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -84,14 +91,25 @@
   border: 1px solid rgba(209,164,110,.2);
   border-radius: var(--r-lg);
   padding: 24px;
-  transition: border-color .25s, box-shadow .25s, transform .25s;
+  transition: border-color .3s, box-shadow .3s;
 }
 
 .card:hover {
-  border-color: rgba(209,164,110,.55);
-  box-shadow: var(--sh-md);
-  transform: translateY(-4px);
+  border-color: rgba(209,164,110,.7);
+  box-shadow: 0 18px 40px rgba(139,38,53,.12), 0 0 0 1px rgba(209,164,110,.25);
 }
+
+/* Gold light sweep across the card on hover */
+.sheen {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(115deg, transparent 30%, rgba(209,164,110,.22) 48%, rgba(255,255,255,.5) 52%, transparent 70%);
+  transform: translateX(-110%);
+  transition: transform .9s cubic-bezier(.22,1,.36,1);
+  pointer-events: none;
+}
+.card:hover .sheen { transform: translateX(110%); }
 
 .avatar {
   width: 44px;
@@ -104,7 +122,21 @@
   justify-content: center;
   flex-shrink: 0;
   margin-bottom: 6px;
+  position: relative;
 }
+
+/* Soft pulsing gold halo around the locked avatar */
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  opacity: 0;
+  animation: halo 2.8s ease-out infinite;
+}
+.card:nth-child(3n+2) .avatar::after { animation-delay: .9s; }
+.card:nth-child(3n) .avatar::after { animation-delay: 1.8s; }
 
 .name {
   font-family: var(--ff-head);
@@ -124,6 +156,41 @@
   font-size: .85rem;
   font-weight: 700;
   color: var(--gold-dk);
+}
+.arrow { display: inline-block; transition: transform .3s cubic-bezier(.22,1,.36,1); }
+.card:hover .arrow { transform: translateX(5px); }
+
+/* Loading placeholders shown while "searching" */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid rgba(209,164,110,.2);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  min-height: 190px;
+}
+.skAvatar, .skLine {
+  display: block;
+  background: linear-gradient(90deg, var(--gold-xlt) 0%, rgba(209,164,110,.28) 50%, var(--gold-xlt) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+.skAvatar { width: 44px; height: 44px; border-radius: 50%; margin-bottom: 6px; }
+.skLine { height: 12px; border-radius: 6px; }
+
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@keyframes halo {
+  0%   { opacity: .7; transform: scale(1); }
+  70%  { opacity: 0; transform: scale(1.45); }
+  100% { opacity: 0; transform: scale(1.45); }
+}
+@keyframes searchPulse { 50% { transform: scale(1.2) rotate(-12deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar::after, .skAvatar, .skLine, .spin { animation: none; }
+  .sheen { display: none; }
 }
 
 .more {

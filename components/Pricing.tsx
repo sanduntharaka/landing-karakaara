@@ -1,26 +1,28 @@
+"use client";
+
+import { useSyncExternalStore } from "react";
+import {
+  DEFAULT_REGION,
+  PUBLISH_PLAN_MONTHS,
+  PUBLISH_PRICES,
+  detectRegion,
+  formatPrice,
+} from "@/lib/pricing";
 import s from "./Pricing.module.css";
 
-type Plan = {
-  id: string;
-  name: string;
-  price: number;
-  connections: number;
-  perConnection: number;
-  popular: boolean;
-};
+const noopSubscribe = () => () => {};
 
-const PLANS: Plan[] = [
-  { id: "starter", name: "Starter", price: 300, connections: 1, perConnection: 300, popular: false },
-  { id: "basic", name: "Basic", price: 1000, connections: 3, perConnection: 200, popular: false },
-  { id: "popular", name: "Popular", price: 1800, connections: 10, perConnection: 180, popular: true },
-  { id: "premium", name: "Premium", price: 3000, connections: 20, perConnection: 150, popular: false },
+const FEATURES = [
+  `Your proposal stays published for ${PUBLISH_PLAN_MONTHS} months`,
+  "Visible to verified members looking for a match",
+  "Receive and respond to proposals",
+  "One-time payment - no auto-renewal, no hidden charges",
 ];
 
-function formatLKR(n: number) {
-  return `LKR ${n.toLocaleString("en-LK")}`;
-}
-
 export default function Pricing() {
+  const region = useSyncExternalStore(noopSubscribe, detectRegion, () => DEFAULT_REGION);
+  const price = PUBLISH_PRICES[region];
+
   return (
     <section className={`${s.pricing} section`} id="pricing" aria-labelledby="pricing-h">
       <div className="container">
@@ -30,32 +32,29 @@ export default function Pricing() {
             Pay Only When It Matters
           </h2>
           <p className="section-sub">
-            Browsing profiles and publishing proposals is completely free.
-            Buy connection credits only when you&apos;re ready to unlock full
-            contact details after a mutual proposal acceptance - no
-            subscriptions, no hidden charges.
+            Publish your proposal for {PUBLISH_PLAN_MONTHS} months with a single,
+            affordable payment - no subscriptions, no hidden charges.
           </p>
         </header>
 
-        <div className={s.grid}>
-          {PLANS.map((plan) => (
-            <div key={plan.id} className={`${s.card} ${plan.popular ? s.popular : ""}`}>
-              {plan.popular && <span className={s.ribbon}>Most Popular</span>}
-              <div className={s.name}>{plan.name}</div>
-              <div className={s.price}>{formatLKR(plan.price)}</div>
-              <div className={s.credits}>
-                {plan.connections} connection{plan.connections > 1 ? "s" : ""}
-              </div>
-              <div className={s.perConn}>{formatLKR(plan.perConnection)} per connection</div>
-            </div>
-          ))}
+        <div className={s.grid} data-stagger>
+          <div className={`${s.card} ${s.popular}`}>
+            <span className={s.ribbon}>Publish Proposal</span>
+            <div className={s.name}>{PUBLISH_PLAN_MONTHS}-Month Listing</div>
+            <div className={s.price}>{formatPrice(price)}</div>
+            <div className={s.credits}>for {PUBLISH_PLAN_MONTHS} months</div>
+            <ul className={s.features}>
+              {FEATURES.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <p className={s.note}>
-          A connection credit unlocks one member&apos;s full contact details
-          after both sides accept a proposal. Prices are shown in Sri Lankan
-          Rupees (LKR); members outside Sri Lanka are shown equivalent
-          local-currency pricing in the app.
+        <p className={s.note} data-reveal>
+          Prices are shown in your local currency based on your region. Sri
+          Lankan members pay LKR {PUBLISH_PRICES.lk.amount}; the exact amount is
+          confirmed in the app before payment.
         </p>
       </div>
     </section>

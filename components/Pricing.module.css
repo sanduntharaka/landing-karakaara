@@ -5,7 +5,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: minmax(0, 420px);
+  justify-content: center;
   gap: 20px;
 }
 
@@ -67,9 +68,28 @@
   margin-bottom: 4px;
 }
 
-.perConn {
-  font-size: .8rem;
-  color: var(--muted);
+.features {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid rgba(209,164,110,.25);
+  text-align: left;
+  display: grid;
+  gap: 10px;
+}
+.features li {
+  position: relative;
+  padding-left: 24px;
+  font-size: .9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.features li::before {
+  content: "¹3";
+  position: absolute;
+  left: 0;
+  color: var(--wine);
+  font-weight: 700;
 }
 
 .note {
@@ -83,9 +103,6 @@
   line-height: 1.7;
 }
 
-@media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-}
 @media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; }
   .card { padding: 28px 20px; }

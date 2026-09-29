@@ -93,7 +93,7 @@ export default function Features() {
           </p>
         </header>
 
-        <div className={s.grid}>
+        <div className={s.grid} data-stagger>
           {FEATURES.map((f) => (
             <div key={f.title} className={s.card}>
               <div className={s.icon} aria-hidden>

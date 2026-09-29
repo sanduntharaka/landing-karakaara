@@ -21,7 +21,7 @@ export default function CtaSection() {
       <div className={s.pattern} aria-hidden />
       <div className={s.glow} aria-hidden />
       <div className="container">
-        <div className={s.content}>
+        <div className={s.content} data-reveal>
           <div className={s.lotus} aria-hidden>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
               <ellipse cx="22" cy="17" rx="4.5" ry="11" fill="#F3E9E4" opacity="0.4"/>

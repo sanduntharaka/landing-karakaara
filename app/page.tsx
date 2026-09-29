@@ -9,6 +9,8 @@ import ProposalDemo from "@/components/ProposalDemo";
 import Testimonials from "@/components/Testimonials";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import LoveParticles from "@/components/LoveParticles";
 
 export default function Home() {
   return (
@@ -28,6 +30,8 @@ export default function Home() {
         <CtaSection />
       </main>
       <Footer />
+      <ScrollReveal />
+      <LoveParticles />
     </>
   );
 }

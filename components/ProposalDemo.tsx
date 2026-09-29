@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import { AnimatePresence, MotionConfig, motion, useInView, type Variants } from "framer-motion";
 import { APP_URLS, redirectToAppOrWeb } from "@/lib/config";
 import s from "./ProposalDemo.module.css";
 
@@ -66,6 +67,21 @@ const RELIGIONS = ["Any Religion", ...RELIGION_VALUES];
 const DEFAULT_FILTERS: Filters = { gender: "Any", location: "Any District", religion: "Any Religion" };
 
 const MAX_VISIBLE = 6;
+const SEARCH_DELAY_MS = 650;
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 32, scale: 0.96, rotateX: 8 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotateX: 0,
+    transition: { duration: 0.7, ease: EASE, delay: i * 0.08 },
+  }),
+  exit: { opacity: 0, scale: 0.94, y: -12, transition: { duration: 0.25, ease: "easeIn" } },
+};
 
 function goToLogin() {
   redirectToAppOrWeb(APP_URLS.login);
@@ -77,6 +93,17 @@ function LockIcon() {
       <rect x="4" y="9" width="12" height="8" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" />
       <path d="M6.5 9V6.5a3.5 3.5 0 0 1 7 0V9" fill="none" stroke="currentColor" strokeWidth="1.5" />
     </svg>
+  );
+}
+
+function SkeletonCard() {
+  return (
+    <div className={s.skeleton} aria-hidden="true">
+      <span className={s.skAvatar} />
+      <span className={s.skLine} style={{ width: "60%" }} />
+      <span className={s.skLine} style={{ width: "85%" }} />
+      <span className={s.skLine} style={{ width: "70%" }} />
+    </div>
   );
 }
 
@@ -92,6 +119,10 @@ function SearchIcon() {
 export default function ProposalDemo() {
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [appliedFilters, setAppliedFilters] = useState<Filters | null>(null);
+  const [searching, setSearching] = useState(false);
+  const searchTimer = useRef<number | undefined>(undefined);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const gridInView = useInView(gridRef, { once: true, margin: "0px 0px -80px 0px" });
 
   const { results, total } = useMemo(() => {
     if (!appliedFilters) return { results: FEATURED, total: FEATURED.length };
@@ -105,10 +136,16 @@ export default function ProposalDemo() {
   }, [appliedFilters]);
 
   function handleSearch() {
-    setAppliedFilters(filters);
+    window.clearTimeout(searchTimer.current);
+    setSearching(true);
+    searchTimer.current = window.setTimeout(() => {
+      setAppliedFilters(filters);
+      setSearching(false);
+    }, SEARCH_DELAY_MS);
   }
 
   return (
+    <MotionConfig reducedMotion="user">
     <section className={`${s.section} section`} id="browse" aria-labelledby="browse-h">
       <div className="container">
         <header className="section-hdr">
@@ -160,39 +197,77 @@ export default function ProposalDemo() {
               ))}
             </select>
           </label>
-          <button type="button" className={s.searchBtn} onClick={handleSearch}>
-            <SearchIcon />
-            Search Proposals
-          </button>
+          <motion.button
+            type="button"
+            className={s.searchBtn}
+            onClick={handleSearch}
+            disabled={searching}
+            whileTap={{ scale: 0.96 }}
+          >
+            <span className={searching ? s.spin : s.icon}>
+              <SearchIcon />
+            </span>
+            {searching ? "Finding matches..." : "Search Proposals"}
+          </motion.button>
         </div>
 
-        <div className={s.grid}>
-          {results.map((p) => (
-            <button type="button" key={p.id} className={s.card} onClick={goToLogin}>
-              <span className={s.avatar} aria-hidden="true">
-                <LockIcon />
-              </span>
-              <span className={s.name}>{p.name}</span>
-              <span className={s.meta}>
-                {p.gender} &middot; {p.age} yrs &middot; {p.location}
-              </span>
-              <span className={s.meta}>
-                {p.religion} &middot; {p.profession}
-              </span>
-              <span className={s.viewLink}>Sign in to respond to this proposal &rarr;</span>
-            </button>
-          ))}
+        <div ref={gridRef} className={s.grid} aria-busy={searching}>
+          {searching ? (
+            Array.from({ length: results.length || 3 }, (_, i) => <SkeletonCard key={`sk-${i}`} />)
+          ) : (
+            <AnimatePresence mode="popLayout">
+              {results.map((p, i) => (
+                <motion.button
+                  layout
+                  type="button"
+                  key={p.id}
+                  className={s.card}
+                  onClick={goToLogin}
+                  custom={i}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate={gridInView ? "show" : "hidden"}
+                  exit="exit"
+                  whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className={s.sheen} aria-hidden="true" />
+                  <span className={s.avatar} aria-hidden="true">
+                    <LockIcon />
+                  </span>
+                  <span className={s.name}>{p.name}</span>
+                  <span className={s.meta}>
+                    {p.gender} &middot; {p.age} yrs &middot; {p.location}
+                  </span>
+                  <span className={s.meta}>
+                    {p.religion} &middot; {p.profession}
+                  </span>
+                  <span className={s.viewLink}>
+                    Sign in to respond to this proposal <span className={s.arrow}>&rarr;</span>
+                  </span>
+                </motion.button>
+              ))}
+            </AnimatePresence>
+          )}
         </div>
 
-        {total > results.length && (
-          <p className={s.more}>
-            Showing {results.length} of {total} matching sample proposals.{" "}
-            <button type="button" className={s.moreLink} onClick={goToLogin}>
-              Sign in to see the rest
-            </button>
-          </p>
-        )}
+        <AnimatePresence>
+          {!searching && total > results.length && (
+            <motion.p
+              className={s.more}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.5 } }}
+              exit={{ opacity: 0 }}
+            >
+              Showing {results.length} of {total} matching sample proposals.{" "}
+              <button type="button" className={s.moreLink} onClick={goToLogin}>
+                Sign in to see the rest
+              </button>
+            </motion.p>
+          )}
+        </AnimatePresence>
       </div>
     </section>
+    </MotionConfig>
   );
 }

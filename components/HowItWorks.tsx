@@ -71,7 +71,7 @@ const STEPS = [
   {
     num: "4",
     title: "Pay Only When It Matters",
-    desc: "Browsing and publishing proposals is completely free. Once both parties have mutually accepted, connection credits start from LKR 300 to unlock direct contact details and begin the conversation. No subscriptions, no hidden charges.",
+    desc: "Publish your proposal for 3 months for just LKR 500 (or the equivalent in your local currency). One simple payment - no subscriptions, no hidden charges.",
     icon: (
       <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
         <rect
@@ -116,7 +116,7 @@ export default function HowItWorks() {
           </p>
         </header>
 
-        <div className={s.steps}>
+        <div className={s.steps} data-stagger>
           {STEPS.map((step) => (
             <div key={step.num} className={s.step}>
               <div className={s.numWrap}>
