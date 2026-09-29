@@ -62,6 +62,32 @@ function drawSparkle(ctx: CanvasRenderingContext2D, s: number) {
   ctx.fill();
 }
 
+// Shapes are pre-rendered once into small sprites and blitted with drawImage.
+// Live shadowBlur/path filling per frame is very slow in Safari (esp. iOS).
+const SPRITE_BASE = 40; // shape "size" the sprite is drawn at
+const SPRITE_PX = 128; // sprite canvas size, leaves room for the glow
+const sprites = new Map<string, HTMLCanvasElement>();
+
+function getSprite(shape: Shape, color: string, glow: boolean): HTMLCanvasElement {
+  const key = `${shape}|${color}|${glow}`;
+  let sprite = sprites.get(key);
+  if (sprite) return sprite;
+  sprite = document.createElement("canvas");
+  sprite.width = sprite.height = SPRITE_PX;
+  const c = sprite.getContext("2d")!;
+  c.translate(SPRITE_PX / 2, SPRITE_PX / 2);
+  c.fillStyle = color;
+  if (glow) {
+    c.shadowColor = color;
+    c.shadowBlur = 18;
+  }
+  if (shape === "heart") drawHeart(c, SPRITE_BASE);
+  else if (shape === "star") drawStar(c, SPRITE_BASE);
+  else drawSparkle(c, SPRITE_BASE);
+  sprites.set(key, sprite);
+  return sprite;
+}
+
 export default function LoveParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -78,9 +104,13 @@ export default function LoveParticles() {
     const ambientCount = isSmall ? 10 : 20;
 
     function resize() {
+      // iOS Safari fires resize whenever its toolbar shows/hides while scrolling.
+      // Resizing a canvas clears it, so ignore height-only shrinks.
+      if (window.innerWidth === w && window.innerHeight <= h) return;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      if (window.innerWidth !== w) h = 0;
       w = window.innerWidth;
-      h = window.innerHeight;
+      h = Math.max(h, window.innerHeight);
       canvas!.width = w * dpr;
       canvas!.height = h * dpr;
       canvas!.style.width = `${w}px`;
@@ -171,53 +201,55 @@ export default function LoveParticles() {
 
     let raf = 0;
     let t = 0;
+    let last = 0;
 
-    function frame() {
-      t++;
+    function frame(now: number) {
+      // Scale motion by elapsed time: Safari runs rAF at 30fps in Low Power Mode
+      // (and 120fps on ProMotion), so per-frame steps would change the speed.
+      const dt = last ? Math.min((now - last) / (1000 / 60), 3) : 1;
+      last = now;
+      t += dt;
+      const dpr = canvas!.width / w;
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx!.clearRect(0, 0, w, h);
 
       for (let i = particles.length - 1; i >= 0; i--) {
         const p = particles[i];
 
         if (p.ambient) {
-          p.y += p.vy;
-          p.x += Math.sin(t * 0.012 + p.swayPhase) * 0.4;
+          p.y += p.vy * dt;
+          p.x += Math.sin(t * 0.012 + p.swayPhase) * 0.4 * dt;
           if (p.y > h + 20) particles[i] = spawnAmbient(false);
         } else {
-          p.vy += p.shape === "sparkle" ? 0.01 : 0.06; // gentle gravity
-          p.vx *= 0.97;
-          p.vy *= 0.985;
-          p.x += p.vx;
-          p.y += p.vy;
-          p.life--;
-          p.alpha = 0.9 * (p.life / p.maxLife);
+          p.vy += (p.shape === "sparkle" ? 0.01 : 0.06) * dt; // gentle gravity
+          p.vx *= Math.pow(0.97, dt);
+          p.vy *= Math.pow(0.985, dt);
+          p.x += p.vx * dt;
+          p.y += p.vy * dt;
+          p.life -= dt;
+          p.alpha = 0.9 * Math.max(p.life / p.maxLife, 0);
           if (p.life <= 0) {
             particles.splice(i, 1);
             continue;
           }
         }
-        p.rot += p.vr;
+        p.rot += p.vr * dt;
 
-        ctx!.save();
-        ctx!.translate(p.x, p.y);
-        ctx!.rotate(p.rot);
+        const scale = p.size / SPRITE_BASE;
+        const cos = Math.cos(p.rot) * scale * dpr;
+        const sin = Math.sin(p.rot) * scale * dpr;
+        ctx!.setTransform(cos, sin, -sin, cos, p.x * dpr, p.y * dpr);
         ctx!.globalAlpha = p.alpha;
-        ctx!.fillStyle = p.color;
-        if (!p.ambient) {
-          ctx!.shadowColor = p.color;
-          ctx!.shadowBlur = 8;
-        }
-        if (p.shape === "heart") drawHeart(ctx!, p.size);
-        else if (p.shape === "star") drawStar(ctx!, p.size);
-        else drawSparkle(ctx!, p.size);
-        ctx!.restore();
+        ctx!.drawImage(getSprite(p.shape, p.color, !p.ambient), -SPRITE_PX / 2, -SPRITE_PX / 2);
       }
+      ctx!.globalAlpha = 1;
 
       raf = requestAnimationFrame(frame);
     }
 
     function onVisibility() {
       cancelAnimationFrame(raf);
+      last = 0;
       if (!document.hidden) raf = requestAnimationFrame(frame);
     }
 
@@ -244,7 +276,7 @@ export default function LoveParticles() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      style={{ position: "fixed", inset: 0, zIndex: 99, pointerEvents: "none" }}
+      style={{ position: "fixed", top: 0, left: 0, zIndex: 99, pointerEvents: "none" }}
     />
   );
 }

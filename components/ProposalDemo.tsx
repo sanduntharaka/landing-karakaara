@@ -72,12 +72,11 @@ const SEARCH_DELAY_MS = 650;
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 32, scale: 0.96, rotateX: 8 },
+  hidden: { opacity: 0, y: 32, scale: 0.96 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
     scale: 1,
-    rotateX: 0,
     transition: { duration: 0.7, ease: EASE, delay: i * 0.08 },
   }),
   exit: { opacity: 0, scale: 0.94, y: -12, transition: { duration: 0.25, ease: "easeIn" } },
