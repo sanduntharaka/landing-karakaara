@@ -1,3 +1,9 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+[[redirects]]
+  from = "/android"
+  to = "https://play.google.com/store/apps/details?id=com.lankovate.karakaara"
+  status = 301
+  force = true
