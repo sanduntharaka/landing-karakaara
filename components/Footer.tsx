@@ -56,25 +56,28 @@ export default function Footer() {
                 height={45}
               />
             </Link>
-            <p className={s.tagline}>Where Hearts Meet Tradition</p>
+            <p className={s.tagline}>Sri Lankan Matrimonial Advertisements</p>
             <p className={s.desc}>
-              Sri Lanka&apos;s premier matrimony platform - connecting
-              individuals and families through tradition, culture, and the
-              timeless pursuit of partnership.
+              Karakaara brings the traditional Sri Lankan matrimonial
+              advertisement into the digital age. Traditional values. Modern
+              platform. Meaningful connections.
             </p>
           </div>
 
           <nav className={s.nav} aria-label="Footer navigation">
             <div className={s.col}>
               <span className={s.colHdr}>Platform</span>
-              <Link href="/#features" className={s.link}>
-                Features
+              <Link href="/#browse" className={s.link}>
+                Matrimonial Ads
               </Link>
               <Link href="/#how-it-works" className={s.link}>
                 How It Works
               </Link>
               <Link href="/#pricing" className={s.link}>
                 Pricing
+              </Link>
+              <Link href="/#faq" className={s.link}>
+                FAQ
               </Link>
               <Link href="/#download" className={s.link}>
                 Download

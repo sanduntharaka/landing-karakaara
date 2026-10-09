@@ -4,9 +4,9 @@ export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Karakaara – Where Hearts Meet Tradition',
+    name: 'Karakaara – Sri Lankan Matrimonial Advertisements',
     short_name: 'Karakaara',
-    description: "Sri Lanka's premier matrimony platform",
+    description: 'Post, browse and respond to Sri Lankan matrimonial advertisements',
     start_url: '/',
     display: 'standalone',
     background_color: '#F8F1EB',

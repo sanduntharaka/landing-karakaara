@@ -117,38 +117,47 @@
   pointer-events: none;
 }
 
-.avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--wine) 0%, var(--gold-dk) 100%);
-  color: var(--white);
+.cardTop {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-bottom: 6px;
-  position: relative;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+  border-bottom: 1px dashed rgba(209,164,110,.45);
 }
 
-/* Soft pulsing gold halo around the locked avatar */
-.avatar::after {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 1.5px solid var(--gold);
-  opacity: 0;
-  animation: halo 2.8s ease-out infinite;
+.adNo {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--wine);
+  background: var(--wine-xlt);
+  padding: 3px 10px;
+  border-radius: 999px;
 }
-.card:nth-child(3n+2) .avatar::after { animation-delay: .9s; }
-.card:nth-child(3n) .avatar::after { animation-delay: 1.8s; }
 
-.name {
+.postedBy {
+  font-size: .75rem;
+  color: var(--muted);
+}
+
+.headline {
   font-family: var(--ff-head);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--wine);
+}
+
+.verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #2f7a4b;
 }
 
 .meta {
@@ -176,25 +185,19 @@
   padding: 24px;
   min-height: 190px;
 }
-.skAvatar, .skLine {
+.skLine {
   display: block;
   background: linear-gradient(90deg, var(--gold-xlt) 0%, rgba(209,164,110,.28) 50%, var(--gold-xlt) 100%);
   background-size: 200% 100%;
   animation: shimmer 1.2s linear infinite;
 }
-.skAvatar { width: 44px; height: 44px; border-radius: 50%; margin-bottom: 6px; }
 .skLine { height: 12px; border-radius: 6px; }
 
 @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
-@keyframes halo {
-  0%   { opacity: .7; transform: scale(1); }
-  70%  { opacity: 0; transform: scale(1.45); }
-  100% { opacity: 0; transform: scale(1.45); }
-}
 @keyframes searchPulse { 50% { transform: scale(1.2) rotate(-12deg); } }
 
 @media (prefers-reduced-motion: reduce) {
-  .avatar::after, .skAvatar, .skLine, .spin { animation: none; }
+  .skLine, .spin { animation: none; }
   .sheen { display: none; }
 }
 

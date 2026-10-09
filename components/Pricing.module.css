@@ -85,7 +85,7 @@
   line-height: 1.5;
 }
 .features li::before {
-  content: "¹3";
+  content: "✓";
   position: absolute;
   left: 0;
   color: var(--wine);

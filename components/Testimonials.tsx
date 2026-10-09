@@ -4,17 +4,17 @@ const VALUES = [
   {
     icon: "🏛️",
     title: "Rooted in Tradition",
-    body: "We deeply respect Sri Lankan culture, family values, and the sacred nature of marriage. Karakaara is built around these foundations - not just as a feature, but as a commitment.",
+    body: "We deeply respect Sri Lankan culture, family values, and the sacred nature of marriage. Karakaara keeps the familiar matrimonial advertisement at its heart - simply made easier to post, find and answer.",
   },
   {
     icon: "🔒",
     title: "Privacy & Trust First",
-    body: "Your profile, your story, and your family's trust matter to us. We apply strict verification and privacy controls so every connection feels safe and genuine.",
+    body: "Your family's trust matters to us. Every advertisement is reviewed before it is published, contact details stay hidden, and you decide who you respond to.",
   },
   {
     icon: "🌏",
     title: "Connecting the Diaspora",
-    body: "Whether you are in Colombo, Melbourne, London, or Toronto - Karakaara bridges distance so Sri Lankans everywhere can find a partner who shares their roots and values.",
+    body: "Whether you are in Colombo, Melbourne, London, or Toronto - Karakaara brings Sri Lankan matrimonial advertisements from home and overseas together in one place.",
   },
 ];
 
@@ -27,18 +27,21 @@ export default function Testimonials() {
     >
       <div className="container">
         <header className="section-hdr">
-          <span className="badge">About Us</span>
+          <span className="badge">About Karakaara</span>
           <h2 className="section-title" id="about-h">
-            Built for Sri Lanka, by Sri Lankans
+            A Modern Platform for Sri Lankan Matrimonial Advertisements
           </h2>
           <p className="section-sub">
-            Karakaara was born from a simple belief - finding a life partner
-            should honour your culture, involve your family, and feel completely
-            yours. Karakaara is a matrimonial matchmaking platform, not a
-            dating app - every profile and proposal here is created with
-            marriage in mind. We are a team of Sri Lankans passionate about
-            making that happen for every community, at home and around the
-            world.
+            Karakaara brings the traditional Sri Lankan matrimonial
+            advertisement into the digital age. Families and individuals can
+            publish matrimonial advertisements, discover suitable proposals,
+            and connect with interested parties through a secure and trusted
+            platform. Whether you are looking for a bride or groom in Sri Lanka
+            or among the Sri Lankan community overseas, Karakaara makes it
+            easier to discover genuine matrimonial opportunities while
+            respecting privacy, culture and family values. Karakaara is not a
+            dating app - every advertisement here is posted with marriage in
+            mind.
           </p>
         </header>
 

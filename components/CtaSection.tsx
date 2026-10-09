@@ -35,8 +35,8 @@ export default function CtaSection() {
           </div>
 
           <span className="badge-light">Begin Today</span>
-          <h2 className={s.title} id="cta-h">Your Life Partner Awaits</h2>
-          <p className={s.sub}>Join thousands of Sri Lankans who have found their life partners through Karakaara.</p>
+          <h2 className={s.title} id="cta-h">Post Your Matrimonial Advertisement Today</h2>
+          <p className={s.sub}>Reach Sri Lankan families at home and overseas - or browse the latest advertisements and send an inquiry. Available on the web and Android.</p>
 
           <div className={s.btns}>
             <button className={s.btnPrimary} onClick={handleLogin}>
@@ -44,8 +44,12 @@ export default function CtaSection() {
                 <rect x="3" y="2" width="14" height="16" rx="2" stroke="currentColor" strokeWidth="1.5"/>
                 <path d="M7 6h6M7 10h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
               </svg>
-              Open Web App
+              Post Advertisement
             </button>
+
+            <a className={s.btnGhost} href="#browse">
+              Browse Ads
+            </a>
 
             <button className={s.btnGhost} onClick={handleAndroid}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>

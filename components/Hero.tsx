@@ -4,6 +4,13 @@ import Image from "next/image";
 import { APP_URLS, handleLogin } from "@/lib/config";
 import s from "./Hero.module.css";
 
+const TRUST_POINTS = [
+  "Verified advertisements",
+  "Privacy protected",
+  "Sri Lanka and overseas",
+  "Family-friendly platform",
+];
+
 export default function Hero() {
   return (
     <section className={s.hero} id="home" aria-label="Welcome to Karakaara">
@@ -111,33 +118,36 @@ export default function Hero() {
           {/* Col 2: text content */}
           <div className={s.col2}>
             <div className={`${s.eyebrow} ${s.fadeIn}`} role="text">
-              ✦ &nbsp; Sri Lankan Matrimony Platform &nbsp; ✦
+              ✦ &nbsp; Sri Lankan Matrimonial Advertisements &nbsp; ✦
               <span className={s.eyebrowSi} lang="si">
-                ශ්‍රී ලාංකිකයන්ගේ හදවත් එකතුවන එකම වේදිකාව
+                ශ්‍රී ලංකාවේ මංගල දැන්වීම් සඳහා විශ්වාසනීය වේදිකාව
               </span>
             </div>
 
-            <p className={`${s.tagline} ${s.fadeIn}`}>
-              <em>Where Hearts Meet Tradition</em>
+            <h1 className={`${s.tagline} ${s.fadeIn}`}>
+              <em>Find the Matrimonial Proposal You&apos;re Looking For</em>
               <span className={s.taglineSi} lang="si">
-                සම්ප්‍රදාය හා සදාකාලික බැදීම් හමු වන තැන
+                ඔබ සොයන මංගල යෝජනාව සොයාගන්න
               </span>
-            </p>
+            </h1>
 
             <p className={`${s.sub} ${s.fadeIn}`}>
-              Sri Lanka&apos;s premier matrimony platform - connecting
-              individuals and families through culture, tradition, and the
-              timeless pursuit of meaningful partnership.
+              Search, view and respond to matrimonial advertisements from Sri
+              Lanka and Sri Lankans overseas - all in one trusted place.
               <span className={s.subSi} lang="si">
-                ශ්‍රී ලංකාවේ ප්‍රමුඛ විවාහ වේදිකාව - සංස්කෘතිය, සම්ප්‍රදාය හා
-                තාක්‍ෂණය එකට මුහු කරමින් ඔබට ගැළපෙනම ජීවන සහකරු සොයා ගැනීමට
-                විශ්වාසනීය පියවරක්.
+                ශ්‍රී ලංකාවේ සහ විදේශගත ශ්‍රී ලාංකිකයන්ගේ මංගල දැන්වීම් එකම
+                ස්ථානයකින් සොයන්න, බලන්න සහ සම්බන්ධ වන්න.
               </span>
             </p>
 
             <div className={`${s.actions} ${s.fadeIn}`}>
               <a className={s.btnPrimary} href={APP_URLS.web} onClick={(e) => { e.preventDefault(); handleLogin(); }}>
-                Begin Your Journey
+                <span className={s.btnLabel}>
+                  Post a Matrimonial Advertisement
+                  <span className={s.btnLabelSi} lang="si">
+                    ඔබගේ මංගල දැන්වීම සාදන්න
+                  </span>
+                </span>
                 <svg
                   width="16"
                   height="16"
@@ -154,10 +164,16 @@ export default function Hero() {
                   />
                 </svg>
               </a>
-              <a href="#features" className={s.btnOutline}>
-                Explore More
+              <a href="#browse" className={s.btnOutline}>
+                Browse Matrimonial Ads
               </a>
             </div>
+
+            <ul className={`${s.trust} ${s.fadeIn}`} aria-label="Why advertise on Karakaara">
+              {TRUST_POINTS.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
 
             {/* <motion.div className={s.langs} aria-label="Available in Sinhala and English" variants={fadeUp} custom={0.6} initial="hidden" animate="show">
               <span lang="si">සිංහල</span>

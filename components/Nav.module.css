@@ -161,7 +161,14 @@
   padding: 13px;
 }
 
-@media (max-width: 640px) {
+.link, .btnLogin, .btnStart { white-space: nowrap; }
+
+@media (max-width: 1180px) {
+  .container { gap: 20px; }
+  .link { padding: 7px 10px; }
+}
+
+@media (max-width: 1024px) {
   .links, .actions { display: none; }
   .hamburger { display: flex; }
 }

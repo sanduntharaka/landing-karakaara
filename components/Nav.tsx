@@ -7,6 +7,14 @@ import { useRouter } from 'next/navigation';
 import { APP_URLS, handleLogin } from '@/lib/config';
 import s from './Nav.module.css';
 
+const NAV_LINKS = [
+  ['browse', 'Matrimonial Ads'],
+  ['how-it-works', 'How It Works'],
+  ['pricing', 'Pricing'],
+  ['faq', 'FAQ'],
+  ['about', 'About'],
+] as const;
+
 export default function Nav() {
   const router = useRouter();
   const navRef = useRef<HTMLElement>(null);
@@ -62,7 +70,7 @@ export default function Nav() {
         </Link>
 
         <ul className={s.links} role="list">
-          {[['features','Features'],['how-it-works','How It Works'],['pricing','Pricing'],['about','About']].map(([id, label]) => (
+          {NAV_LINKS.map(([id, label]) => (
             <li key={id}>
               <Link href={`/#${id}`} className={s.link} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
                 {label}
@@ -72,8 +80,8 @@ export default function Nav() {
         </ul>
 
         <div className={s.actions}>
-          <a className={s.btnLogin} href={APP_URLS.web} aria-label="Sign in" onClick={(e) => { e.preventDefault(); handleLogin(); }}>Sign In</a>
-          <a className={s.btnStart} href={APP_URLS.web} aria-label="Get started" onClick={(e) => { e.preventDefault(); handleLogin(); }}>Get Started</a>
+          <a className={s.btnLogin} href={APP_URLS.web} aria-label="Login" onClick={(e) => { e.preventDefault(); handleLogin(); }}>Login</a>
+          <a className={s.btnStart} href={APP_URLS.web} aria-label="Post an advertisement" onClick={(e) => { e.preventDefault(); handleLogin(); }}>+ Post Advertisement</a>
         </div>
 
         <button
@@ -88,14 +96,14 @@ export default function Nav() {
 
       {menuOpen && (
         <div className={s.mobileMenu}>
-          {[['features','Features'],['how-it-works','How It Works'],['pricing','Pricing'],['about','About']].map(([id, label]) => (
+          {NAV_LINKS.map(([id, label]) => (
             <Link key={id} href={`/#${id}`} className={s.mobileLink} onClick={(e) => handleAnchor(e as React.MouseEvent<HTMLAnchorElement>, id)}>
               {label}
             </Link>
           ))}
           <div className={s.mobileActions}>
-            <a className={s.btnLogin} href={APP_URLS.web} onClick={(e) => { e.preventDefault(); handleLogin(); }}>Sign In</a>
-            <a className={s.btnStart} href={APP_URLS.web} onClick={(e) => { e.preventDefault(); handleLogin(); }}>Get Started</a>
+            <a className={s.btnLogin} href={APP_URLS.web} onClick={(e) => { e.preventDefault(); handleLogin(); }}>Login</a>
+            <a className={s.btnStart} href={APP_URLS.web} onClick={(e) => { e.preventDefault(); handleLogin(); }}>+ Post Advertisement</a>
           </div>
         </div>
       )}

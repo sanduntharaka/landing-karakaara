@@ -4,29 +4,24 @@ import s from "./Features.module.css";
 
 const FEATURES = [
   {
-    icon: "tradition",
-    title: "Tradition First",
-    desc: "Proposals crafted following Sri Lankan customs, horoscope compatibility, and family values - because what matters is what has always mattered.",
-  },
-  {
-    icon: "diaspora",
-    title: "Diaspora Friendly",
-    desc: "Connect across borders. Whether you're in Colombo or London, find life partners who share your Sri Lankan roots and values.",
+    icon: "verified",
+    title: "Verified Advertisements",
+    desc: "Every advertisement is reviewed by the Karakaara team before it is published, so you can browse with confidence.",
   },
   {
     icon: "privacy",
     title: "Privacy Protected",
-    desc: "Your details are shared with care. Control exactly who sees your information, ensuring your journey stays private until you're ready.",
+    desc: "Your phone number and email stay hidden. Interested parties send an inquiry, and you decide how and when to share your contact details.",
   },
   {
-    icon: "platform",
-    title: "Modern Platform",
-    desc: "Available on iOS, Android, and Web - seamlessly bridging traditional matchmaking with the digital age, wherever you are.",
+    icon: "tradition",
+    title: "Made for Sri Lankan Families",
+    desc: "Parents, siblings and guardians can post on behalf of a loved one - just like a traditional newspaper matrimonial advertisement.",
   },
   {
-    icon: "verified",
-    title: "Verified Profiles",
-    desc: "Every proposal is reviewed and ID-verified before publishing, so you can browse with confidence.",
+    icon: "diaspora",
+    title: "Sri Lanka and Overseas",
+    desc: "Reach Sri Lankan families at home and across the diaspora - from Colombo and Kandy to London, Melbourne and Toronto.",
   },
 ];
 
@@ -83,13 +78,12 @@ export default function Features() {
     >
       <div className="container">
         <header className="section-hdr">
-          <span className="badge">Our Promise</span>
+          <span className="badge">Why Karakaara?</span>
           <h2 className="section-title" id="feat-h">
-            Built for Sri Lankan Hearts
+            The Trusted Home for Matrimonial Ads
           </h2>
           <p className="section-sub">
-            A platform that honors your traditions while embracing modern
-            convenience
+            Traditional values. Modern platform. Meaningful connections.
           </p>
         </header>
 

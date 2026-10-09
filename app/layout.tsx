@@ -22,20 +22,22 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const TITLE = "Karakaara - Sri Lankan Matrimonial Advertisements";
+const DESCRIPTION =
+  "Post, browse and respond to verified Sri Lankan matrimonial advertisements. Bride and groom wanted ads from Sri Lanka and overseas, with privacy-protected inquiries.";
+
 export const metadata: Metadata = {
-  title: "Karakaara - Where Hearts Meet Tradition | Sri Lankan Matrimony",
-  description:
-    "Karakaara is Sri Lanka's premier matrimony platform. Browse traditional marriage proposals, find compatible matches, and begin your journey together.",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "Sri Lankan matrimony",
-    "marriage proposals",
-    "Sinhala wedding",
-    "Lanka marriage app",
-    "traditional matchmaking",
+    "Sri Lankan matrimonial advertisements",
+    "matrimonial ads Sri Lanka",
+    "bride wanted Sri Lanka",
+    "groom wanted Sri Lanka",
+    "මංගල දැන්වීම්",
+    "marriage proposals Sri Lanka",
+    "Sri Lankan diaspora matrimonial",
     "karakaara",
-    "poruwa ceremony",
-    "sinhala marriage",
-    "diaspora",
   ],
   authors: [{ name: "Karakaara - Lankovate Technologies" }],
   robots: { index: true, follow: true },
@@ -44,9 +46,8 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://karakaara.lk/",
     siteName: "Karakaara",
-    title: "Karakaara - Where Hearts Meet Tradition",
-    description:
-      "Sri Lanka's premier matrimony platform connecting hearts through tradition and culture.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [
       {
         url: "https://karakaara.lk/og-image.jpg",
@@ -58,9 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karakaara - Where Hearts Meet Tradition",
-    description:
-      "Sri Lanka's premier matrimony platform connecting hearts through tradition and culture.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["https://karakaara.lk/og-image.jpg"],
   },
 };
@@ -79,7 +79,8 @@ const jsonLd = {
         url: "https://karakaara.lk/assets/images/only_logo.png",
       },
       description:
-        "Sri Lankan matrimony platform connecting hearts through tradition",
+        "A trusted digital platform where Sri Lankan individuals and families can publish, discover, and respond to matrimonial advertisements.",
+      slogan: "Traditional values. Modern platform. Meaningful connections.",
       foundingLocation: { "@type": "Country", name: "Sri Lanka" },
     },
     {
