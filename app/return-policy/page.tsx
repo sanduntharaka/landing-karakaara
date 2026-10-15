@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import LegalContactLinks from "../privacy/LegalContactLinks";
 import s from "../privacy/Privacy.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/return-policy",
   title: "Return and Refund Policy | Karakaara",
   description:
     "Karakaara return and refund policy for digital matrimony services and PayHere payments.",
-  alternates: { canonical: "https://karakaara.lk/return-policy" },
-  openGraph: {
-    title: "Return and Refund Policy | Karakaara",
-    description:
-      "How Karakaara handles returns, refunds, duplicate payments, and payment issues.",
-    url: "https://karakaara.lk/return-policy",
-    siteName: "Karakaara",
-    type: "website",
-  },
-};
+  shareDescription:
+    "How Karakaara handles returns, refunds, duplicate payments, and payment issues.",
+});
 
 const refundSections = [
   {

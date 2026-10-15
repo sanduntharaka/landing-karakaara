@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import LegalContactLinks from "../privacy/LegalContactLinks";
 import s from "../privacy/Privacy.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/delete-account",
   title: "Delete Your Account | Karakaara",
   description:
     "Learn how to delete your Karakaara account from the app, what happens to your data, and how to request deletion if you can't access the app.",
-  alternates: { canonical: "https://karakaara.lk/delete-account" },
-  openGraph: {
-    title: "Delete Your Account | Karakaara",
-    description:
-      "Step-by-step instructions to delete your Karakaara account and information on what data is removed.",
-    url: "https://karakaara.lk/delete-account",
-    siteName: "Karakaara",
-    type: "website",
-  },
-};
+  shareDescription:
+    "Step-by-step instructions to delete your Karakaara account and information on what data is removed.",
+});
 
 const deletionSections = [
   {

@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import LegalContactLinks from "../privacy/LegalContactLinks";
 import s from "../privacy/Privacy.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/child-safety-standards",
   title: "Child Safety Standards | Karakaara",
   description:
     "Karakaara's standards and commitment against child sexual abuse and exploitation (CSAE), our age requirements, reporting mechanisms, and cooperation with law enforcement.",
-  alternates: { canonical: "https://karakaara.lk/child-safety-standards" },
-  openGraph: {
-    title: "Child Safety Standards | Karakaara",
-    description:
-      "Karakaara's zero-tolerance policy, safeguards, and reporting process for child sexual abuse and exploitation (CSAE).",
-    url: "https://karakaara.lk/child-safety-standards",
-    siteName: "Karakaara",
-    type: "website",
-  },
-};
+  shareDescription:
+    "Karakaara's zero-tolerance policy, safeguards, and reporting process for child sexual abuse and exploitation (CSAE).",
+});
 
 const childSafetySections = [
   {

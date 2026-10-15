@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import LegalContactLinks from "../privacy/LegalContactLinks";
 import s from "../privacy/Privacy.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/business-terms",
   title: "Terms and Conditions | Karakaara",
   description:
     "Terms and conditions for using Karakaara matrimony services, paid features.",
-  alternates: { canonical: "https://karakaara.lk/business-terms" },
-  openGraph: {
-    title: "Terms and Conditions | Karakaara",
-    description:
-      "Terms for account use, proposals, payments, refunds, community safety, and service access on Karakaara.",
-    url: "https://karakaara.lk/business-terms",
-    siteName: "Karakaara",
-    type: "website",
-  },
-};
+  shareDescription:
+    "Terms for account use, proposals, payments, refunds, community safety, and service access on Karakaara.",
+});
 
 const termsSections = [
   {

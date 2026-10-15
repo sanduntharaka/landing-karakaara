@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import { SITE_NAME, SITE_URL, pageMetadata } from "@/lib/seo";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -27,8 +28,9 @@ const DESCRIPTION =
   "Post, browse and respond to verified Sri Lankan matrimonial advertisements. Bride and groom wanted ads from Sri Lanka and overseas, with privacy-protected inquiries.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  ...pageMetadata({ path: "/", title: TITLE, description: DESCRIPTION }),
+  applicationName: SITE_NAME,
   keywords: [
     "Sri Lankan matrimonial advertisements",
     "matrimonial ads Sri Lanka",
@@ -40,28 +42,10 @@ export const metadata: Metadata = {
     "karakaara",
   ],
   authors: [{ name: "Karakaara - Lankovate Technologies" }],
-  robots: { index: true, follow: true },
-  alternates: { canonical: "https://karakaara.lk/" },
-  openGraph: {
-    type: "website",
-    url: "https://karakaara.lk/",
-    siteName: "Karakaara",
-    title: TITLE,
-    description: DESCRIPTION,
-    images: [
-      {
-        url: "https://karakaara.lk/assets/images/hero_image.png",
-        width: 1200,
-        height: 675,
-      },
-    ],
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: TITLE,
-    description: DESCRIPTION,
-    images: ["https://karakaara.lk/assets/images/hero_image.png"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 
@@ -82,6 +66,19 @@ const jsonLd = {
         "A trusted digital platform where Sri Lankan individuals and families can publish, discover, and respond to matrimonial advertisements.",
       slogan: "Traditional values. Modern platform. Meaningful connections.",
       foundingLocation: { "@type": "Country", name: "Sri Lanka" },
+      email: "contact@karakaara.lk",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        telephone: "+94-76-770-0657",
+        email: "contact@karakaara.lk",
+        areaServed: "LK",
+        availableLanguage: ["English", "Sinhala"],
+      },
+      sameAs: [
+        "https://www.facebook.com/profile.php?id=61590546328729",
+        "https://play.google.com/store/apps/details?id=com.lankovate.karakaara",
+      ],
     },
     {
       "@type": "WebSite",

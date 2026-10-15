@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import LegalContactLinks from "./LegalContactLinks";
 import s from "./Privacy.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/privacy",
   title: "Privacy Policy | Karakaara",
   description:
     "Learn how Karakaara collects, uses, shares, and protects personal information for members.",
-  alternates: { canonical: "https://karakaara.lk/privacy" },
-  openGraph: {
-    title: "Privacy Policy | Karakaara",
-    description:
-      "How Karakaara protects your information, conversations, reports, and payments.",
-    url: "https://karakaara.lk/privacy",
-    siteName: "Karakaara",
-    type: "website",
-  },
-};
+  shareDescription:
+    "How Karakaara protects your information, conversations, reports, and payments.",
+});
 
 const privacySections = [
   {

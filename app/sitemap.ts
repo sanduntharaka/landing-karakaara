@@ -1,34 +1,30 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 
-const BASE = 'https://karakaara.lk';
+const LEGAL_PAGES = [
+  '/privacy',
+  '/return-policy',
+  '/business-terms',
+  '/child-safety-standards',
+  '/delete-account',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
   return [
     {
-      url: BASE,
-      lastModified: new Date(),
+      url: SITE_URL,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 1,
     },
-    {
-      url: `${BASE}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+    ...LEGAL_PAGES.map((path) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
       priority: 0.5,
-    },
-    {
-      url: `${BASE}/return-policy`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${BASE}/business-terms`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
+    })),
   ];
 }
