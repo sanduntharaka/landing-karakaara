@@ -7,3 +7,9 @@
   to = "https://play.google.com/store/apps/details?id=com.lankovate.karakaara"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/business-terms"
+  status = 301
+  force = true

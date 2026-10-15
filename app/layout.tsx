@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: "https://karakaara.lk/og-image.jpg",
+        url: "https://karakaara.lk/assets/images/hero_image.png",
         width: 1200,
-        height: 630,
+        height: 675,
       },
     ],
     locale: "en_US",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["https://karakaara.lk/og-image.jpg"],
+    images: ["https://karakaara.lk/assets/images/hero_image.png"],
   },
 };
 
